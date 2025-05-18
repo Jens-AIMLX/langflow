@@ -51,7 +51,7 @@ delete_temp() {
 }
 
 # Trap signals to ensure cleanup on script termination
-trap 'terminate_process_by_port 7860; terminate_process_by_port 3000; delete_temp' EXIT
+trap 'terminate_process_by_port 7860; terminate_process_by_port 3100; delete_temp' EXIT
 
 # Ensure the script is executed from the project root directory
 if ! cd "$PROJECT_ROOT"; then
@@ -115,4 +115,4 @@ if [ "$ui" = true ]; then
 fi
 
 
-trap 'terminate_process_by_port 7860; terminate_process_by_port 3000; delete_temp; kill $backend_pid 2>/dev/null' EXIT
+trap 'terminate_process_by_port 7860; terminate_process_by_port 3100; delete_temp; kill $backend_pid 2>/dev/null' EXIT

@@ -219,7 +219,7 @@ install_frontendc:
 	@cd src/frontend && $(call CLEAR_DIRS,node_modules) && rm -f package-lock.json && npm install > /dev/null 2>&1
 
 run_frontend: ## run the frontend
-	@-kill -9 `lsof -t -i:3000`
+	@-kill -9 `lsof -t -i:3100`
 	@cd src/frontend && npm start $(if $(FRONTEND_START_FLAGS),-- $(FRONTEND_START_FLAGS))
 
 tests_frontend: ## run frontend tests

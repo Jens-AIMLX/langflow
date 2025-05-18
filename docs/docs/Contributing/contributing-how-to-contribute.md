@@ -97,7 +97,7 @@ yarn install
 yarn start
 ```
 
-The documentation will be available at `localhost:3000` and all the files are located in the `docs/docs` folder.
+The documentation will be available at `localhost:3100` and all the files are located in the `docs/docs` folder.
 
 ## Open a pull request
 

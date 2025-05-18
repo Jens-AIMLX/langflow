@@ -64,7 +64,7 @@
       "name": "Debug Frontend",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000/",
+      "url": "http://localhost:3100/",
       "webRoot": "${workspaceRoot}/src/frontend"
     },
     {

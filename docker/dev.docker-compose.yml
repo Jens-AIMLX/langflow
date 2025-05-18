@@ -11,7 +11,7 @@ services:
     restart: always
     ports:
       - "7860:7860"
-      - "3000:3000"
+      - "3100:3100"
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@postgres:5432/langflow

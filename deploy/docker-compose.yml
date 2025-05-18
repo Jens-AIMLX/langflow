@@ -214,7 +214,7 @@ services:
     env_file:
       - .env
     # ports:
-    #   - 3000:3000
+    #   - 3100:3100
     volumes:
       - grafana_data:/var/lib/grafana
     deploy:
@@ -222,7 +222,7 @@ services:
         - traefik.enable=true
         - traefik.constraint-label-stack=${TRAEFIK_TAG?Variable not set}
         - traefik.http.routers.${STACK_NAME?Variable not set}-grafana-http.rule=PathPrefix(`/grafana`)
-        - traefik.http.services.${STACK_NAME?Variable not set}-grafana.loadbalancer.server.port=3000
+        - traefik.http.services.${STACK_NAME?Variable not set}-grafana.loadbalancer.server.port=3100
 
 volumes:
   grafana_data:

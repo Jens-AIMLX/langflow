@@ -27,7 +27,7 @@ services:
     environment:
       - VITE_PROXY_TARGET=http://backend:7860
     ports:
-      - "8080:3000"
+      - "8080:3100"
     volumes:
       - ./src/frontend/public:/home/node/app/public
       - ./src/frontend/src:/home/node/app/src

@@ -175,7 +175,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "str",
-                "value": "3000"
+                "value": "3100"
               },
               "customer_support_cost": {
                 "advanced": false,

@@ -53,7 +53,7 @@ For active development with hot-reloading:
    make frontend
    ```
 
-The Langflow UI will be available at http://localhost:3000/
+The Langflow UI will be available at http://localhost:3100/
 
 ## Documentation Development
 
@@ -65,7 +65,7 @@ yarn install
 yarn start
 ```
 
-The documentation will be available at http://localhost:3001/ (or another port if 3000 is already in use).
+The documentation will be available at http://localhost:3001/ (or another port if 3100 is already in use).
 
 ## Before Submitting Changes
 

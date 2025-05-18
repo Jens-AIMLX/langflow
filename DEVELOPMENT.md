@@ -142,7 +142,7 @@ At which point you can check http://localhost:7860/health in a browser; when the
 
 ### Start the Frontend Service
 
-The frontend (User Interface) is, in shipped code (i.e. via `langflow run`), statically-compiled files that the backend FastAPI service provides to clients via port `7860`. In development mode, these are served by a Node.js service on port `3000`. In the *Frontend Terminal*, start the frontend service:
+The frontend (User Interface) is, in shipped code (i.e. via `langflow run`), statically-compiled files that the backend FastAPI service provides to clients via port `7860`. In development mode, these are served by a Node.js service on port `3100`. In the *Frontend Terminal*, start the frontend service:
 
 ```bash
 make frontend
@@ -153,12 +153,12 @@ You will get output similar to:
 ```
   VITE v5.4.11  ready in 552 ms
 
-  ➜  Local:   http://localhost:3000/
+  ➜  Local:   http://localhost:3100/
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
 ```
 
-At this point, you can navigate to http://localhost:3000/ in a browser and access the Langflow User Interface.
+At this point, you can navigate to http://localhost:3100/ in a browser and access the Langflow User Interface.
 
 ### Build and Display Documentation
 
@@ -172,7 +172,7 @@ yarn install
 yarn start
 ```
 
-If the frontend service is running on port `3000` you might be prompted `Would you like to run the app on another port instead?`, in which case answer "yes". You will get output similar to:
+If the frontend service is running on port `3100` you might be prompted `Would you like to run the app on another port instead?`, in which case answer "yes". You will get output similar to:
 
 ```
 [SUCCESS] Docusaurus website is running at: http://localhost:3001/

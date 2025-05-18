@@ -26,6 +26,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-install-project --no-dev --extra postgresql
 
 EXPOSE 7860
-EXPOSE 3000
+EXPOSE 3100
 
 CMD ["./docker/dev.start.sh"]

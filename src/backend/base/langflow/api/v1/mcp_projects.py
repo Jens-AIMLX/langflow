@@ -179,7 +179,7 @@ class ProjectMCPServer:
 
                 # Build full URL from settings
                 host = getattr(settings_service.settings, "host", "localhost")
-                port = getattr(settings_service.settings, "port", 3000)
+                port = getattr(settings_service.settings, "port", 3100)
 
                 base_url = f"http://{host}:{port}".rstrip("/")
 
