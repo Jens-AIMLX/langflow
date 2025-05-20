@@ -277,3 +277,43 @@ src/frontend/temp
 
 .dspy_cache/
 *.db
+
+# Virtual Environments
+.venv/
+.venv*/
+venv/
+env/
+.env/
+.python-3.13.3-embed-amd64/
+.python*/
+
+# Zip files
+.venv.zip
+*.zip
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dll
+*.exe
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db

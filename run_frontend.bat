@@ -1,10 +1,10 @@
 @echo off 
-cd "D:\dev\Langflow\langflow\docker\frontend" 
+cd "C:\Users\jenss\OneDrive - Singularyt UG\Code\source\Dev\Langflow\langflow\docker\frontend" 
 echo. 
 echo ---------------------------------------------------------------------------------- 
-echo LangFlow Frontend started at 14:50:40,60 
+echo LangFlow Frontend started at %TIME% 
 echo ---------------------------------------------------------------------------------- 
-call :log_cmd "npm start" ..\..\frontend.log 
+call :log_cmd "npm start" ..\..\logs\frontend.log 
 goto :eof 
  
 :log_cmd 

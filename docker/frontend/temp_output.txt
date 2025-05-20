@@ -1,13 +1,13 @@
 Das Sprungziel - log_cmd wurde nicht gefunden.
-npm install completed, log saved to frontend.log
+npm install completed, log saved to logs\frontend.log
 🚀  npm start...
 Starting frontend...
 
-✅  All done!
+✅  All done
    • Backend → http://localhost:7860
    • Frontend → http://localhost:3000
 
 Check the log files for details:
-  - backend.log: Backend server logs
-  - poetry_debug.log: Poetry installation logs
-  - frontend.log: Frontend logs
+  - logs\backend.log: Backend server logs
+  - logs\poetry_debug.log: Poetry installation logs
+  - logs\frontend.log: Frontend logs
