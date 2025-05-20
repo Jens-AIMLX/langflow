@@ -53,12 +53,12 @@ We're installing Langflow using the UV package manager as recommended in the [Ol
 ### 4. Simplified Langflow Installation
 
 **What we do:**
-- Install Langflow 0.0.78 with all dependencies except tiktoken
-- Use UV's `--exclude` flag to skip problematic dependencies
+- Install Langflow 0.0.78 with all dependencies
+- Uninstall tiktoken after installation
 
 **Why:**
 - Letting Langflow handle its own dependencies avoids architecture mismatch issues
-- The `--exclude` flag allows us to skip tiktoken, which has architecture compatibility issues
+- Uninstalling tiktoken after installation avoids architecture compatibility issues
 - This approach is simpler and more reliable than installing dependencies separately
 - Consistently using UV maintains the recommended approach from the article
 - Avoids build issues with pandas and other packages with C extensions
