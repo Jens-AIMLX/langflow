@@ -26,7 +26,7 @@ py -m pip install uv
 
 REM Step 6: Install pandas first (required by Langflow)
 echo Installing pandas...
-py -m uv pip install pandas
+py -m uv pip install "pandas<2.0.0,>=1.5.3"
 
 REM Step 7: Install Langflow with specific version constraints and skip problematic dependencies
 echo Installing Langflow...
@@ -34,11 +34,11 @@ py -m uv pip install "langflow==0.0.78" --no-deps
 
 REM Step 8: Install dependencies manually, excluding problematic ones
 echo Installing dependencies...
-py -m uv pip install "langchain<0.0.267" "fastapi>=0.95.2,<0.100.0" "uvicorn>=0.22.0,<0.23.0" "beautifulsoup4>=4.12.2,<4.13.0" "typer>=0.9.0,<0.10.0" "pypdf>=3.15.1,<3.16.0" "lxml>=4.9.3,<4.10.0" "pydantic>=1.10.8,<2.0.0" "python-multipart>=0.0.6,<0.0.7" "sqlmodel>=0.0.8,<0.0.9" "orjson>=3.9.2,<3.10.0" "rich>=13.4.2,<13.5.0" "openai>=0.27.8,<0.28.0" "jinja2>=3.1.2,<3.2.0" "aiohttp>=3.8.5,<3.9.0" "typing-inspect>=0.9.0,<0.10.0" "packaging>=23.1,<23.2" "fastapi-socketio>=0.0.10,<0.1.0" "httpx>=0.24.1,<0.25.0" "pillow>=10.0.0,<10.1.0" "watchdog>=3.0.0,<3.1.0" "loguru>=0.7.0,<0.8.0" "passlib>=1.7.4,<1.8.0" "python-jose>=3.3.0,<3.4.0" "bcrypt>=4.0.1,<4.1.0"
+py -m uv pip install "langchain<0.0.177,>=0.0.176" "fastapi<0.93.0,>=0.92.0" "uvicorn<0.21.0,>=0.20.0" "beautifulsoup4<5.0.0,>=4.11.2" "typer<0.8.0,>=0.7.0" "pypdf<4.0.0,>=3.7.1" "lxml<5.0.0,>=4.9.2" "pydantic>=1.10.8,<2.0.0" "python-multipart>=0.0.6,<0.0.7" "sqlmodel>=0.0.8,<0.0.9" "orjson>=3.9.2,<3.10.0" "rich<14.0.0,>=13.3.3" "openai<0.28.0,>=0.27.2" "jinja2>=3.1.2,<3.2.0" "aiohttp>=3.8.5,<3.9.0" "typing-inspect>=0.9.0,<0.10.0" "packaging>=23.1,<23.2" "dill<0.4.0,>=0.3.6" "docstring-parser<0.16,>=0.15" "networkx<4.0,>=3.1" "websockets<12.0.0,>=11.0.2" "wikipedia<2.0.0,>=1.4.0"
 
-REM Step 9: Try to install tiktoken with a pre-built wheel
+REM Step 9: Try to install tiktoken with uv
 echo Attempting to install tiktoken...
-py -m pip install --only-binary :all: tiktoken
+py -m uv pip install "tiktoken==0.3.3" --no-build
 
 REM Step 10: Run Langflow
 echo Starting Langflow...
