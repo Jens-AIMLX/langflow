@@ -103,18 +103,8 @@ echo # Update chromadb version to be compatible with crewai >> update_project.py
 echo content = re.sub(r'"chromadb==0.5.23",', '"chromadb>=0.5.23",', content) >> update_project.py
 echo # Remove crewai that conflicts with chromadb >> update_project.py
 echo content = re.sub(r'"crewai==0.102.0",', '"# crewai==0.102.0 # Temporarily disabled due to chromadb conflict",', content) >> update_project.py
-echo # Update Python version constraint to be more permissive >> update_project.py
-echo content = re.sub(r'requires-python = ">=3.10,<3.13"', 'requires-python = ">=3.10,<3.14"', content) >> update_project.py
-echo with open('pyproject.toml', 'w') as f: >> update_project.py
-echo     f.write(content) >> update_project.py
-echo print("Pyproject.toml updated successfully") >> update_project.py
 
-%PY% update_project.py
-if errorlevel 1 (
-    echo Failed to update pyproject.toml
-) else (
-    echo Successfully updated pyproject.toml
-)
+
 
 REM 5) Install backend with Poetry
 echo 🔨 Running Poetry install with logging...

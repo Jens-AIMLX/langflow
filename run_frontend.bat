@@ -1,8 +1,8 @@
 @echo off 
-cd "C:\Users\jenss\OneDrive - Singularyt UG\Code\source\Dev\Langflow\langflow\docker\frontend" 
+cd "D:\dev\Langflow\langflow\docker\frontend" 
 echo. 
 echo ---------------------------------------------------------------------------------- 
-echo LangFlow Frontend started at 13:56:31,84 
+echo LangFlow Frontend started at 14:50:40,60 
 echo ---------------------------------------------------------------------------------- 
 call :log_cmd "npm start" ..\..\frontend.log 
 goto :eof 

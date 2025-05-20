@@ -21,4 +21,4 @@ Last updated: May 1, 2025
 
 ## Core information
 - **Langflow Version**: `1.4.x`
-- **Python Version Required**: `>=3.10, <3.14`
+- **Python Version Required**: `>=3.10, <3.13`
