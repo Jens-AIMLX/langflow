@@ -2,7 +2,7 @@
 name = "langflow"
 version = "1.4.1"
 description = "A Python package with a built-in web application"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.10,<3.14"
 license = "MIT"
 keywords = ["nlp", "langchain", "openai", "gpt", "gui"]
 readme = "README.md"
@@ -35,8 +35,8 @@ dependencies = [
     "supabase==2.6.0",
     "certifi>=2023.11.17,<2025.0.0",
     "certifi==2024.8.30",
-     # always use 1.9.x on 3.10–3.12
-     "fastavro>=1.9.7,<1.10.0",
+    # always use 1.9.x on 3.10–3.12
+    "fastavro>=1.9.7,<1.10.0",
     "redis==5.2.1",
     "metaphor-python==0.1.23",
     'pywin32==307; sys_platform == "win32"',
@@ -53,7 +53,7 @@ dependencies = [
     "dspy-ai==2.5.41",
     "assemblyai==0.35.1",
     "litellm==1.60.2",
-    "chromadb==0.5.23",
+    "chromadb<0.5.0",
     "zep-python==2.0.2",
     "youtube-transcript-api==0.6.3",
     "Markdown==3.7",
@@ -105,7 +105,7 @@ dependencies = [
     "sseclient-py==1.8.0",
     "arize-phoenix-otel>=0.6.1",
     "openinference-instrumentation-langchain>=0.1.29",
-    "crewai==0.102.0",
+    # "crewai==0.102.0 # Temporarily disabled due to chromadb conflict",
     "mcp>=0.9.1",
     "uv>=0.5.7",
     "webrtcvad>=2.0.10",
