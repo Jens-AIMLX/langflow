@@ -1,19 +1,71 @@
 @echo off
 setlocal
 
-REM <-- force Python 3.12 by default; you can override with e.g. "bootstrap-local.bat py-3.11"
-if "%~1"=="" (
-  set "PY=py -3.12"
-) else (
+REM Use a simple approach to find Python, trying multiple methods
+set "PY=python"
+
+if "%~1" NEQ "" (
   set "PY=%~1"
 )
 
 REM Ensure we're using a compatible Python version (not 3.13)
 echo Verifying Python version compatibility...
 %PY% -c "import sys; print('Using Python', sys.version); version_info = sys.version_info; exit(1 if version_info.major==3 and version_info.minor>=13 else 0)" > python_version.log 2>&1
+
+if errorlevel 9009 (
+  echo Python command failed: '%PY%'. Trying alternatives...
+  
+  REM Try py launcher with version flag if user didn't specify
+  if "%~1"=="" (
+    echo Trying py launcher with -3.12...
+    py -3.12 -c "import sys; print('Using Python', sys.version)" > python_version.log 2>&1
+    if not errorlevel 1 (
+      set "PY=py -3.12"
+      goto python_found
+    )
+    
+    echo Trying py launcher with -3.11...
+    py -3.11 -c "import sys; print('Using Python', sys.version)" > python_version.log 2>&1
+    if not errorlevel 1 (
+      set "PY=py -3.11"
+      goto python_found
+    )
+  )
+  
+  REM Try with python3 command
+  echo Trying python3...
+  python3 -c "import sys; print('Using Python', sys.version)" > python_version.log 2>&1
+  if not errorlevel 1 (
+    set "PY=python3"
+    goto python_found
+  )
+  
+  REM Check common Python locations
+  if exist "C:\Python312\python.exe" (
+    echo Found Python at C:\Python312\python.exe
+    set "PY=C:\Python312\python.exe"
+    goto python_found
+  )
+  
+  if exist "C:\Python311\python.exe" (
+    echo Found Python at C:\Python311\python.exe
+    set "PY=C:\Python311\python.exe"
+    goto python_found
+  )
+  
+  echo ERROR: Could not find a working Python installation.
+  echo Please install Python 3.11 or 3.12 and ensure it's in your PATH.
+  exit /b 1
+)
+
+:python_found
+echo Found Python: %PY%
+
+REM Check Python version for 3.13 compatibility
+%PY% -c "import sys; version_info = sys.version_info; exit(1 if version_info.major==3 and version_info.minor>=13 else 0)" > nul 2>&1
 if errorlevel 1 (
-  echo ERROR: Python 3.13+ detected, but this project requires Python <3.13
-  echo Please use Python 3.11 or 3.12 by specifying: bootstrap_local.bat "py -3.11"
+  echo ERROR: Python 3.13+ detected, but this project requires Python ^<3.13
+  echo Please use Python 3.11 or 3.12
   exit /b 1
 )
 
