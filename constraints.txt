@@ -1,0 +1,9 @@
+langflow==1.4.2
+
+firecrawl-py==1.54.0
+elevenlabs==1.59.0
+
+# Specific known dependencies with Python 3.12 compatibility
+elastic-transport==8.15.1
+elasticsearch==8.16.0
+
