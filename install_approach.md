@@ -50,53 +50,18 @@ We're installing Langflow using the UV package manager as recommended in the [Ol
 - The article specifically recommends using UV
 - UV has better dependency resolution capabilities
 
-### 4. Specific Version of pandas
+### 4. Simplified Langflow Installation
 
 **What we do:**
-- Install pandas with exact version (`pandas==1.5.3`)
-- Use UV to maintain consistency with the article's recommendations
+- Install Langflow 0.0.78 with all dependencies except tiktoken
+- Use UV's `--exclude` flag to skip problematic dependencies
 
 **Why:**
-- Langflow 0.0.78 requires pandas<2.0.0
-- Installing pandas first ensures it's available when Langflow needs it
-- Using an exact version (1.5.3) ensures compatibility and reproducibility
-- Specifying the exact version helps UV find the appropriate package
+- Letting Langflow handle its own dependencies avoids architecture mismatch issues
+- The `--exclude` flag allows us to skip tiktoken, which has architecture compatibility issues
+- This approach is simpler and more reliable than installing dependencies separately
 - Consistently using UV maintains the recommended approach from the article
-
-### 5. Langflow Installation
-
-**What we do:**
-- Install Langflow 0.0.78 without dependencies
-- Install dependencies separately
-
-**Why:**
-- Installing without dependencies gives us more control over which dependencies are installed
-- Allows us to skip problematic dependencies
-- Enables us to specify exact version ranges for each dependency
-
-### 6. Dependencies Installation
-
-**What we do:**
-- Install dependencies with specific version constraints
-- Include all essential dependencies mentioned in Langflow's requirements
-- Use UV for most dependencies
-
-**Why:**
-- Specific version constraints ensure compatibility with Langflow 0.0.78
-- Installing all essential dependencies ensures Langflow functions properly
-- Using UV maintains consistency with the article's recommendations
-
-### 7. Handling Problematic Packages
-
-**What we do:**
-- Skip `tiktoken` installation entirely
-- Install `aiohttp` with UV
-
-**Why:**
-- `tiktoken` has architecture compatibility issues between its build system (targeting 32-bit) and 64-bit Python
-- The package explicitly targets 32-bit architecture in its build configuration, making it difficult to build on 64-bit systems
-- `tiktoken` is not essential for basic Ollama integration
-- `aiohttp` is installed with UV for consistency
+- Avoids build issues with pandas and other packages with C extensions
 
 ## Challenges and Solutions
 
@@ -169,23 +134,16 @@ We're installing Langflow using the UV package manager as recommended in the [Ol
 
 ### Skipped Dependencies
 
-The following dependencies are intentionally skipped or replaced due to build issues or compatibility problems:
+The following dependency is intentionally skipped due to build issues or compatibility problems:
 
 1. **tiktoken** - OpenAI's tokenizer with architecture compatibility issues (32-bit vs 64-bit)
-2. **webrtcvad** - Voice activity detection library that requires C++ compilation
-3. **chroma-hnswlib** - Vector database component that requires C++ compilation
-4. **llama-cpp-python** - LLM inference library that requires complex C++ compilation
-5. **psycopg2-binary** - PostgreSQL adapter that can have build issues
-6. **pyarrow** - Apache Arrow implementation that can have build issues
-7. **unstructured** - Document parsing library with many dependencies
-8. **gptcache** - Caching library for LLM responses
-9. **google-api-python-client** - Google API client with complex dependencies
-10. **google-search-results** - Search API client
-11. **huggingface-hub** - HuggingFace model repository client
-12. **chromadb** - Vector database that requires complex dependencies
-13. **pysrt** - Subtitle file parser
-14. **gunicorn** - WSGI HTTP server (not needed on Windows)
-15. **types-pyyaml** - Type stubs for PyYAML
+
+Other dependencies that might cause build issues but are handled by UV's dependency resolution:
+
+- **webrtcvad** - Voice activity detection library that requires C++ compilation
+- **chroma-hnswlib** - Vector database component that requires C++ compilation
+- **llama-cpp-python** - LLM inference library that requires complex C++ compilation
+- **pandas** - Data analysis library with C extensions
 
 ### Supported Functionality
 
@@ -206,15 +164,12 @@ Despite skipping these dependencies, the following core functionality remains su
 The following functionality may be limited or unavailable due to skipped dependencies:
 
 1. **Advanced Tokenization** - Due to missing tiktoken, some token counting and advanced tokenization features may not work
-2. **Voice Processing** - Due to missing webrtcvad
-3. **Vector Database Storage** - Due to missing chromadb and chroma-hnswlib
-4. **Local LLM Inference** - Due to missing llama-cpp-python
-5. **Advanced Document Processing** - Due to missing unstructured
-6. **Google API Integration** - Due to missing Google API clients
-7. **HuggingFace Model Loading** - Due to missing huggingface-hub
-8. **Subtitle Processing** - Due to missing pysrt
-9. **Advanced Caching** - Due to missing gptcache
-10. **PostgreSQL Database Integration** - Due to missing psycopg2-binary
+
+Some functionality might be limited if UV is unable to resolve or build certain dependencies:
+
+- **Voice Processing** - If webrtcvad fails to build
+- **Vector Database Storage** - If chromadb or chroma-hnswlib fail to build
+- **Local LLM Inference** - If llama-cpp-python fails to build
 
 ### Impact on Ollama Integration
 
