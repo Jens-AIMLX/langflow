@@ -136,9 +136,9 @@ echo Starting Poetry install - this may take a few minutes...
 echo ---------------------------------------------------------------------------------- >> poetry_debug.log
 echo POETRY INSTALL OUTPUT: >> poetry_debug.log
 echo ---------------------------------------------------------------------------------- >> poetry_debug.log
-rem call :log_cmd "poetry install -vv" poetry_debug.log
 poetry debug resolve
-poetry install
+call :log_cmd "poetry install --verbose --no-interaction" poetry_debug.log
+
 
 echo ---------------------------------------------------------------------------------- >> poetry_debug.log
 echo Poetry installation completed at %TIME% >> poetry_debug.log
