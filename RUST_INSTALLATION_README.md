@@ -40,8 +40,19 @@ The error message you encountered (`error: can't find Rust compiler`) indicates 
 
 Once Rust is installed:
 
-1. Run the `install_langflow_uv.bat` script again
-2. The script will now be able to build the Rust-dependent packages
+1. Make sure you have the correct Rust target for your Python architecture:
+   ```
+   # For 64-bit Python (most common)
+   rustup target add x86_64-pc-windows-msvc
+
+   # For 32-bit Python (uncommon)
+   rustup target add i686-pc-windows-msvc
+   ```
+
+2. Run the `install_langflow_uv.bat` script again
+3. The script will now be able to build the Rust-dependent packages
+
+> **Important**: Architecture mismatch between Rust and Python is a common cause of build failures. Our script uses the 64-bit target by default, which matches most modern Python installations. If you're using 32-bit Python, you'll need to modify the script.
 
 ## Troubleshooting
 
