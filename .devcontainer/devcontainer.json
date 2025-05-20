@@ -8,7 +8,7 @@
     "ghcr.io/devcontainers/features/node": {},
     "ghcr.io/dhoeric/features/hadolint:1": {}
   },
-  "onCreateCommand": "bash -lc 'set -euxo pipefail; mkdir -p /workspace/logs && sudo chown -R langflow .venv .mypy_cache src/frontend/node_modules src/frontend/build src/backend/base/langflow/frontend && make install_frontend && make install_backend' 2>&1 | tee /workspace/logs/postcreate.log",
+  "postStartCommand": "bash -lc 'set -euxo pipefail; mkdir -p /workspace/logs; { sudo chown -R langflow .venv .mypy_cache src/frontend/node_modules src/frontend/build src/backend/base/langflow/frontend && make install_frontend && make install_backend; } 2>&1 | tee /workspace/logs/postcreate.log || { echo \"⇨ Build failed—see logs below:\"; cat /workspace/logs/postcreate.log; exit 1; }'",
   "customizations": {
     "vscode": {
       "extensions": [
