@@ -53,15 +53,16 @@ We're installing Langflow using the UV package manager as recommended in the [Ol
 ### 4. Simplified Langflow Installation
 
 **What we do:**
-- Install Langflow 0.0.78 with all dependencies
-- Uninstall tiktoken after installation
+- Install Langflow 0.0.78 with all dependencies, excluding problematic ones
+- Use UV's `--exclude-newer` flag to skip tiktoken and pyarrow
 
 **Why:**
 - Letting Langflow handle its own dependencies avoids architecture mismatch issues
-- Uninstalling tiktoken after installation avoids architecture compatibility issues
+- The `--exclude-newer` flag allows us to skip problematic dependencies like tiktoken and pyarrow
+- Tiktoken has architecture compatibility issues (32-bit vs 64-bit)
+- Pyarrow requires cmake which might not be available on all systems
 - This approach is simpler and more reliable than installing dependencies separately
 - Consistently using UV maintains the recommended approach from the article
-- Avoids build issues with pandas and other packages with C extensions
 
 ## Challenges and Solutions
 
@@ -134,9 +135,10 @@ We're installing Langflow using the UV package manager as recommended in the [Ol
 
 ### Skipped Dependencies
 
-The following dependency is intentionally skipped due to build issues or compatibility problems:
+The following dependencies are intentionally skipped due to build issues or compatibility problems:
 
 1. **tiktoken** - OpenAI's tokenizer with architecture compatibility issues (32-bit vs 64-bit)
+2. **pyarrow** - Apache Arrow implementation that requires cmake and has complex build requirements
 
 Other dependencies that might cause build issues but are handled by UV's dependency resolution:
 
@@ -164,6 +166,7 @@ Despite skipping these dependencies, the following core functionality remains su
 The following functionality may be limited or unavailable due to skipped dependencies:
 
 1. **Advanced Tokenization** - Due to missing tiktoken, some token counting and advanced tokenization features may not work
+2. **Arrow/Parquet Data Handling** - Due to missing pyarrow, some data import/export features may not work
 
 Some functionality might be limited if UV is unable to resolve or build certain dependencies:
 

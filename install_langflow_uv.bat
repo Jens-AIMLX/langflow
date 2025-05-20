@@ -30,17 +30,13 @@ call langflow_venv\Scripts\activate.bat
 REM Step 6: Install uv inside the virtual environment
 py -m pip install uv
 
-REM Step 7: Install an older version of Langflow with all dependencies
-echo Installing Langflow with all dependencies...
-py -m uv pip install "langflow==0.0.78"
+REM Step 7: Install an older version of Langflow with all dependencies, excluding problematic ones
+echo Installing Langflow with all dependencies, excluding problematic ones...
+py -m uv pip install "langflow==0.0.78" --exclude-newer pyarrow --exclude-newer tiktoken
 
-REM Step 8: Skip tiktoken installation by uninstalling it (it's not essential for basic Ollama integration)
-echo Removing tiktoken due to architecture compatibility issues...
-py -m uv pip uninstall -y tiktoken
-
-REM Step 9: Run Langflow
+REM Step 8: Run Langflow
 echo Starting Langflow...
-py -m langflow run
+py -m langflow
 
 echo.
 echo If Langflow started successfully, you can access it at: http://localhost:7860
