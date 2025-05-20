@@ -92,45 +92,48 @@ pip install --upgrade pip setuptools wheel
 echo 📦 Installing Poetry...
 pip install poetry
 
-REM 5) Install backend with improved logging
-echo 🔨  Running Poetry install with detailed logging...
-echo [Debug] Checking Poetry version:
-poetry --version > poetry_debug.log 2>&1
+REM 5) Install backend with Poetry only
+echo 🔨 Running Poetry install with detailed logging...
 echo [Debug] Checking Poetry environment:
-poetry env info >> poetry_debug.log 2>&1
-echo [Debug] Checking Poetry package list before install:
-poetry list >> poetry_debug.log 2>&1 || echo "Poetry list command failed - continuing" >> poetry_debug.log 2>&1
+poetry env info > poetry_debug.log 2>&1
 
-echo Running Poetry install - this may take a while...
-poetry install --verbose >> poetry_debug.log 2>&1
+echo [Debug] Adding src\backend\base as a Poetry local dependency...
+echo Adding langflow-base as a local path dependency... >> poetry_debug.log 2>&1
+poetry config repositories.local %CD%\src\backend\base >> poetry_debug.log 2>&1
+poetry config http-basic.local "none" "none" >> poetry_debug.log 2>&1
 
-echo [Debug] Checking if Poetry's Python can find langflow module:
-poetry run python -c "import sys; print('PYTHONPATH:', sys.path); print('---'); import importlib.util; print('Looking for langflow:'); for p in sys.path: print(' checking ' + p); spec = importlib.util.find_spec('langflow', [p]); if spec: print(' FOUND at ' + p);" >> poetry_debug.log 2>&1 || echo "Import check failed" >> poetry_debug.log 2>&1
+echo [Debug] Now running Poetry install for the main project...
+echo Starting Poetry install - this may take a few minutes...
+echo (Progress will be shown in console)
+echo Poetry installation started at %TIME% > poetry_debug.log
+poetry install --verbose 
 
-echo [Debug] Verifying Poetry environment:
-poetry env info >> poetry_debug.log 2>&1
+echo Poetry installation completed at %TIME% >> poetry_debug.log
+echo [Debug] Setting up __init__.py files to ensure proper module structure...
+if not exist src\backend\langflow mkdir src\backend\langflow
+if not exist src\backend\langflow\__init__.py (
+  echo # Langflow package wrapper > src\backend\langflow\__init__.py
+  echo """Wrapper for langflow-base""" >> src\backend\langflow\__init__.py
+)
+if not exist src\backend\langflow\main mkdir src\backend\langflow\main
+if not exist src\backend\langflow\main\__init__.py (
+  echo # Import main module > src\backend\langflow\main\__init__.py
+  echo """Import the main module from langflow-base""" >> src\backend\langflow\main\__init__.py
+  echo from langflow.main import create_app >> src\backend\langflow\main\__init__.py
+)
 
 echo [Debug] Verifying if langflow is importable:
-poetry run python -c "import importlib; print('Can import langflow: ', importlib.util.find_spec('langflow') is not None)" >> poetry_debug.log 2>&1
+poetry run python -c "import sys; print('PYTHONPATH:', sys.path); from importlib import util; print('Can import langflow: ', util.find_spec('langflow') is not None); spec=util.find_spec('langflow'); print('Found at:', spec.origin if spec else 'Not found')" >> poetry_debug.log 2>&1
 
 echo Poetry installation complete. Check poetry_debug.log for details.
 
-REM 6) Fire up backend
+REM 6) Fire up backend with additional path setup
 echo 🖥️  Starting LangFlow backend...
 echo [Debug] Checking if langflow module can be imported:
-poetry run python -c "import sys; print('PYTHONPATH:', sys.path); print('Can import langflow directly:', __import__('importlib').util.find_spec('langflow') is not None)" > backend_debug.log 2>&1 || echo "Import check failed" > backend_debug.log 2>&1
+poetry run python -c "import sys; print('PYTHONPATH:', sys.path); from importlib import util; print('Can import langflow directly:', util.find_spec('langflow') is not None); spec=util.find_spec('langflow'); print('Found at:', spec.origin if spec else 'Not found')" > backend_debug.log 2>&1 || echo "Import check failed" > backend_debug.log 2>&1
 
-echo [Debug] Checking Poetry detected project path:
-poetry run python -c "import sys; print('Project directory:', __import__('pathlib').Path.cwd()); print('Is src in path:', 'src' in [p.split('\\')[-1] for p in sys.path if p])" >> backend_debug.log 2>&1
-
-echo [Debug] Creating __init__.py in src/backend to ensure it's a package...
-if not exist src\backend\__init__.py (
-  echo. > src\backend\__init__.py
-  echo Created missing __init__.py
-)
-
-echo Starting backend with a custom PYTHONPATH and module path...
-start "LangFlow-backend" cmd /c "set PYTHONPATH=%CD%;%CD%\src;%CD%\src\backend;%CD%\src\backend\base&&set PYTHONDONTWRITEBYTECODE=1&&poetry run python -v -m langflow run --host 0.0.0.0 --port 7860 --dev --log-level debug > backend.log 2>&1"
+echo Starting backend with a modified PYTHONPATH and importing approach...
+start "LangFlow-backend" cmd /c "set PYTHONPATH=%CD%;%CD%\src\backend;%CD%\src\backend\base&&poetry run python -c \"import sys; sys.path.extend(['%CD%', '%CD%\src', '%CD%\src\backend', '%CD%\src\backend\base']); from langflow.__main__ import run_langflow; run_langflow('0.0.0.0', 7860, 'debug', {}, None)\" > backend.log 2>&1"
 
 REM 7) Bootstrap & start frontend
 echo 🌐  Bootstrapping frontend...
