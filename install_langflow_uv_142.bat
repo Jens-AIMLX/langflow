@@ -41,7 +41,7 @@ py -m pip install uv
 
 REM Step 7: Install a more recent stable version of Langflow with all dependencies
 echo Installing Langflow with all dependencies except excludes...
-py -m uv pip install "langflow==1.1.4" --verbose
+py -m uv pip install "langflow==1.4.2" --verbose
 
 REM Step 8: Run Langflow
 echo Starting Langflow...
@@ -60,5 +60,5 @@ echo To restart Langflow later:
 echo 1. Run: langflow_venv\Scripts\activate.bat
 echo 2. Run: py -m langflow run
 echo.
-echo Note: We're using Langflow version 1.1.4 which provides a good balance of features and stability.
+echo Note: We're using Langflow version 1.4.2 which provides a good balance of features and stability.
 echo This version should work well for integration with Ollama.
