@@ -1,4 +1,4 @@
-#!C:\Users\jenss\OneDrive - Singularyt UG\Code\source\Dev\Langflow\langflow\langflow_venv\Scripts\python.exe
+#!D:\dev\Langflow\langflow\langflow_venv\Scripts\python.exe
 """A command line tool for extracting text and images from PDF and
 output it to plain text, html, xml or tags.
 """
