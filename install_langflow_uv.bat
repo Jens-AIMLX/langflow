@@ -36,6 +36,9 @@ python -m venv langflow_venv
 REM Step 5: Activate the virtual environment
 call langflow_venv\Scripts\activate.bat
 
+python -m pip install pdf2image
+conda install -c conda-forge poppler
+
 REM Step 6: Install uv inside the virtual environment
 python -m pip install uv
 
