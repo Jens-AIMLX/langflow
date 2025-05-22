@@ -209,6 +209,12 @@ clickhouse-connect = [
     "clickhouse-connect==0.7.19"
 ]
 
+vision = [
+    "pdf2image>=1.17.1,<2.0.0",
+    "pytesseract>=0.3.10",
+    "Pillow>=9.0.0"
+]
+
 nv-ingest = [
     "nv-ingest-api==2025.4.22.dev20250422",
     "nv-ingest-client==2025.4.22.dev20250422",

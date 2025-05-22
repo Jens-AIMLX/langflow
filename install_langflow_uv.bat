@@ -36,32 +36,68 @@ python -m venv langflow_venv
 REM Step 5: Activate the virtual environment
 call langflow_venv\Scripts\activate.bat
 
+REM Step 6: Install required packages
+echo Installing required packages...
 python -m pip install pdf2image
-conda install -c conda-forge poppler
 
-REM Step 6: Install uv inside the virtual environment
+REM Step 7: Setup Poppler silently (treated as part of Langflow dependencies)
+echo Setting up dependencies...
+set POPPLER_DIR=langflow_venv\poppler
+if not exist "%POPPLER_DIR%" (
+    mkdir "%POPPLER_DIR%" > nul 2>&1
+    
+    echo Downloading dependencies...
+    powershell -Command "& {$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri 'https://github.com/oschwartz10612/poppler-windows/releases/download/v24.02.0-0/Release-24.02.0-0.zip' -OutFile '%POPPLER_DIR%\poppler.zip'}" > nul 2>&1
+    
+    echo Extracting dependencies...
+    powershell -Command "& {Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory('%POPPLER_DIR%\poppler.zip', '%POPPLER_DIR%')}" > nul 2>&1
+    
+    del "%POPPLER_DIR%\poppler.zip" > nul 2>&1
+)
+
+REM Add Poppler to PATH for the current session
+set "PATH=%PATH%;%CD%\%POPPLER_DIR%\Library\bin"
+
+REM Create a script to set the environment variable when activating the virtual environment
+echo @echo off > langflow_venv\Scripts\activate.bat.tmp
+echo REM ===== BEGIN ORIGINAL ACTIVATE.BAT ===== >> langflow_venv\Scripts\activate.bat.tmp
+type langflow_venv\Scripts\activate.bat >> langflow_venv\Scripts\activate.bat.tmp
+echo REM ===== END ORIGINAL ACTIVATE.BAT ===== >> langflow_venv\Scripts\activate.bat.tmp
+echo. >> langflow_venv\Scripts\activate.bat.tmp
+echo REM Set Poppler path >> langflow_venv\Scripts\activate.bat.tmp
+echo set "PATH=%%PATH%%;%%VIRTUAL_ENV%%\poppler\Library\bin" >> langflow_venv\Scripts\activate.bat.tmp
+move /Y langflow_venv\Scripts\activate.bat.tmp langflow_venv\Scripts\activate.bat > nul
+
+REM Create a custom_nodes directory if it doesn't exist
+if not exist "custom_nodes" (
+    mkdir custom_nodes
+)
+
+REM Step 8: Install uv inside the virtual environment
 python -m pip install uv
 
-REM Step 7: Install a more recent stable version of Langflow with all dependencies
-echo Installing Langflow with all dependencies except excludes...
+REM Step 9: Install a more recent stable version of Langflow with all dependencies
+echo Installing Langflow with all dependencies...
 python -m uv pip install "langflow==1.1.4" --verbose
 
-REM Step 8: Run Langflow
-echo Starting Langflow...
-echo Running command: python -m langflow run
-python -m langflow run
-
-REM Step 9: Health check to verify Langflow is running
-echo Performing health check...
-timeout /t 5 /nobreak > nul
-powershell -Command "try { $response = Invoke-WebRequest -Uri 'http://127.0.0.1:7860/health' -TimeoutSec 5; if ($response.StatusCode -eq 200) { Write-Host 'Langflow is running successfully!' -ForegroundColor Green } else { Write-Host 'Langflow may not be running correctly.' -ForegroundColor Yellow } } catch { Write-Host 'Health check failed. Langflow may not be running correctly.' -ForegroundColor Red }"
-
 echo.
-echo If Langflow started successfully, you can access it at: http://127.0.0.1:7860/flows
+echo Installation completed successfully!
 echo.
-echo To restart Langflow later:
-echo 1. Run: langflow_venv\Scripts\activate.bat
-echo 2. Run: python -m langflow run
+
+REM Step 10: Ask user if they want to start Langflow now
+set /p start_now="Do you want to start Langflow now? (y/n): "
+if /i "%start_now%"=="y" (
+    echo.
+    echo Starting Langflow...
+    call run_langflow.bat
+) else (
+    echo.
+    echo Langflow has been installed but not started.
+    echo You can start it later by running: run_langflow.bat
+    echo.
+    echo When Langflow starts, you can access it at: http://127.0.0.1:7860/flows
+)
+
 echo.
 echo Note: We're using Langflow version 1.1.4 which provides a good balance of features and stability.
-echo This version should work well for integration with Ollama.
+echo This version is fully integrated with Poppler for PDF to image conversion.

@@ -1,3 +1,5 @@
+@echo off 
+REM ===== BEGIN ORIGINAL ACTIVATE.BAT ===== 
 @echo off
 
 rem This file is UTF-8 encoded, so we need to update the current code page while executing it
@@ -32,3 +34,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" %_OLD_CODEPAGE% > nul
     set _OLD_CODEPAGE=
 )
+REM ===== END ORIGINAL ACTIVATE.BAT ===== 
+ 
+REM Set Poppler path 
+set "PATH=%PATH%;%VIRTUAL_ENV%\poppler\Library\bin" 
