@@ -3,7 +3,7 @@ echo Installing Langflow using uv...
 
 REM Step 0: Kill any existing Langflow processes
 echo Checking for existing Langflow processes...
-taskkill /F /IM "python.exe" /FI "WINDOWTITLE eq langflow*" > nul 2>&1
+taskkill /F /IM "pythonthon.exe" /FI "WINDOWTITLE eq langflow*" > nul 2>&1
 if %ERRORLEVEL% EQU 0 (
     echo Existing Langflow processes terminated.
 ) else (
@@ -31,22 +31,22 @@ set DISTUTILS_ARCHITECTURE=x86_64
 set DISTUTILS_PLATFORM=win-amd64
 
 REM Step 4: Create a virtual environment using Python launcher
-py -m venv langflow_venv
+python -m venv langflow_venv
 
 REM Step 5: Activate the virtual environment
 call langflow_venv\Scripts\activate.bat
 
 REM Step 6: Install uv inside the virtual environment
-py -m pip install uv
+python -m pip install uv
 
 REM Step 7: Install a more recent stable version of Langflow with all dependencies
 echo Installing Langflow with all dependencies except excludes...
-py -m uv pip install "langflow==1.1.4" --verbose
+python -m uv pip install "langflow==1.1.4" --verbose
 
 REM Step 8: Run Langflow
 echo Starting Langflow...
-echo Running command: py -m langflow run
-py -m langflow run
+echo Running command: python -m langflow run
+python -m langflow run
 
 REM Step 9: Health check to verify Langflow is running
 echo Performing health check...
@@ -58,7 +58,7 @@ echo If Langflow started successfully, you can access it at: http://127.0.0.1:78
 echo.
 echo To restart Langflow later:
 echo 1. Run: langflow_venv\Scripts\activate.bat
-echo 2. Run: py -m langflow run
+echo 2. Run: python -m langflow run
 echo.
 echo Note: We're using Langflow version 1.1.4 which provides a good balance of features and stability.
 echo This version should work well for integration with Ollama.

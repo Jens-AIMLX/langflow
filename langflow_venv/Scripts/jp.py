@@ -1,4 +1,4 @@
-#!C:\Users\jenss\OneDrive - Singularyt UG\Code\source\Dev\Langflow\langflow\langflow_venv\Scripts\python.exe
+#!D:\dev\Langflow\langflow\langflow_venv\Scripts\python.exe
 
 import sys
 import json
