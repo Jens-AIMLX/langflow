@@ -36,5 +36,6 @@ if defined _OLD_CODEPAGE (
 )
 REM ===== END ORIGINAL ACTIVATE.BAT ===== 
  
-REM Set Poppler path 
-set "PATH=%PATH%;%VIRTUAL_ENV%\poppler\Library\bin" 
+REM Set dependency paths 
+set "PATH=%PATH%;%VIRTUAL_ENV%\poppler\Library\bin;%VIRTUAL_ENV%\tesseract" 
+set "TESSDATA_PREFIX=%VIRTUAL_ENV%\tesseract\tessdata" 

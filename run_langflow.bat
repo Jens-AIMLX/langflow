@@ -164,6 +164,146 @@ if "%POPPLER_FOUND%"=="1" (
     )
 )
 
+REM Check for Tesseract OCR
+set "TESSERACT_FOUND=0"
+set "TESSERACT_PATH="
+
+echo Checking for Tesseract OCR installation...
+
+REM Check common Tesseract locations
+if exist "langflow_venv\tesseract\tesseract.exe" (
+    set "TESSERACT_FOUND=1"
+    set "TESSERACT_PATH=%CD%\langflow_venv\tesseract"
+    echo Found Tesseract at %TESSERACT_PATH%
+) else if exist "C:\Program Files\Tesseract-OCR\tesseract.exe" (
+    set "TESSERACT_FOUND=1"
+    set "TESSERACT_PATH=C:\Program Files\Tesseract-OCR"
+    echo Found Tesseract at %TESSERACT_PATH%
+) else if exist "C:\Program Files (x86)\Tesseract-OCR\tesseract.exe" (
+    set "TESSERACT_FOUND=1"
+    set "TESSERACT_PATH=C:\Program Files (x86)\Tesseract-OCR"
+    echo Found Tesseract at %TESSERACT_PATH%
+) else if exist "%LOCALAPPDATA%\Programs\Tesseract-OCR\tesseract.exe" (
+    set "TESSERACT_FOUND=1"
+    set "TESSERACT_PATH=%LOCALAPPDATA%\Programs\Tesseract-OCR"
+    echo Found Tesseract at %TESSERACT_PATH%
+)
+
+REM Check if tesseract is in PATH
+if "%TESSERACT_FOUND%"=="0" (
+    where tesseract.exe >nul 2>&1
+    if %ERRORLEVEL% EQU 0 (
+        set "TESSERACT_FOUND=1"
+        for /f "tokens=*" %%a in ('where tesseract.exe') do (
+            set "TESSERACT_PATH=%%~dpa"
+            echo Found tesseract in PATH at %%a
+        )
+    )
+)
+
+REM Check for language data files
+set "LANGUAGE_DATA_FOUND=0"
+set "TESSDATA_DIR="
+
+if "%TESSERACT_FOUND%"=="1" (
+    echo Checking for Tesseract language data...
+    
+    REM Check in tesseract installation
+    if exist "%TESSERACT_PATH%\tessdata\deu.traineddata" (
+        set "LANGUAGE_DATA_FOUND=1"
+        set "TESSDATA_DIR=%TESSERACT_PATH%\tessdata"
+        echo Found German language data at %TESSDATA_DIR%
+    ) else if exist "%CD%\langflow_venv\tesseract\tessdata\deu.traineddata" (
+        set "LANGUAGE_DATA_FOUND=1"
+        set "TESSDATA_DIR=%CD%\langflow_venv\tesseract\tessdata"
+        echo Found German language data at %TESSDATA_DIR%
+    )
+    
+    REM If language data not found, download it
+    if "%LANGUAGE_DATA_FOUND%"=="0" (
+        echo German language data not found. Downloading it now...
+        
+        REM Ensure tessdata directory exists
+        if not exist "%CD%\langflow_venv\tesseract\tessdata" (
+            mkdir "%CD%\langflow_venv\tesseract\tessdata" 2>nul
+        )
+        
+        REM Try to download language data
+        powershell -Command "& {$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri 'https://github.com/tesseract-ocr/tessdata/raw/main/deu.traineddata' -OutFile '%CD%\langflow_venv\tesseract\tessdata\deu.traineddata'}" 2>nul
+        
+        if exist "%CD%\langflow_venv\tesseract\tessdata\deu.traineddata" (
+            set "LANGUAGE_DATA_FOUND=1"
+            set "TESSDATA_DIR=%CD%\langflow_venv\tesseract\tessdata"
+            echo German language data downloaded successfully.
+        ) else (
+            echo Failed to download German language data.
+            echo Running fix_ocr.bat script to attempt to fix the issue...
+            call fix_ocr.bat
+            
+            if exist "%CD%\langflow_venv\tesseract\tessdata\deu.traineddata" (
+                set "LANGUAGE_DATA_FOUND=1"
+                set "TESSDATA_DIR=%CD%\langflow_venv\tesseract\tessdata"
+                echo German language data downloaded successfully by fix_ocr.bat.
+            )
+        )
+    )
+) else (
+    echo Tesseract OCR not found. It's needed for OCR functionality.
+    echo.
+    set /p install_tesseract="Would you like to install Tesseract OCR now? (y/n): "
+    if /i "%install_tesseract%"=="y" (
+        call install_tesseract.bat
+        if %ERRORLEVEL% NEQ 0 (
+            echo Tesseract installation failed.
+            echo.
+            set /p continue_anyway="Continue without Tesseract? (y/n): "
+            if /i not "%continue_anyway%"=="y" (
+                exit /b 1
+            )
+        ) else (
+            set "TESSERACT_FOUND=1"
+            set "TESSERACT_PATH=%CD%\langflow_venv\tesseract"
+            echo Tesseract installed successfully at %TESSERACT_PATH%
+            
+            REM Check for language data after installation
+            if exist "%TESSERACT_PATH%\tessdata\deu.traineddata" (
+                set "LANGUAGE_DATA_FOUND=1"
+                set "TESSDATA_DIR=%TESSERACT_PATH%\tessdata"
+                echo Found German language data at %TESSDATA_DIR%
+            ) else (
+                echo Running fix_ocr.bat to download language data...
+                call fix_ocr.bat
+                
+                if exist "%CD%\langflow_venv\tesseract\tessdata\deu.traineddata" (
+                    set "LANGUAGE_DATA_FOUND=1"
+                    set "TESSDATA_DIR=%CD%\langflow_venv\tesseract\tessdata"
+                    echo German language data downloaded successfully.
+                )
+            )
+        )
+    ) else (
+        echo.
+        echo Continuing without Tesseract OCR.
+        echo OCR functionality will not be available.
+        echo.
+        echo You can install it later by running: install_tesseract.bat
+    )
+)
+
+REM Set up Tesseract environment variables if found
+if "%TESSERACT_FOUND%"=="1" (
+    echo Adding Tesseract to PATH: %TESSERACT_PATH%
+    set "PATH=%PATH%;%TESSERACT_PATH%"
+    
+    if "%LANGUAGE_DATA_FOUND%"=="1" (
+        echo Setting TESSDATA_PREFIX to %TESSDATA_DIR%
+        set "TESSDATA_PREFIX=%TESSDATA_DIR%"
+    ) else (
+        echo WARNING: Language data not found. OCR may not work correctly.
+        echo You can download language data later using fix_ocr.bat
+    )
+)
+
 REM Ensure custom_nodes directory exists
 if not exist "custom_nodes" (
     mkdir "custom_nodes" > nul 2>&1

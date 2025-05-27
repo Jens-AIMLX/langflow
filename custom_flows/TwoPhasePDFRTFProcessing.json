@@ -1,0 +1,48 @@
+{
+    "version": "1.0",
+    "nodes": [
+      {
+        "id": "pdf_loader",
+        "type": "PDFLoader",
+        "display_name": "PDF Loader",
+        "position": { "x": 100, "y": 100 },
+        "params": {
+          "file_path": "path/to/your.pdf",
+          "ocr": true
+        }
+      },
+      {
+        "id": "ollama_two_phase",
+        "type": "OllamaTwoPhase",
+        "display_name": "Ollama Two-Phase",
+        "position": { "x": 400, "y": 100 },
+        "params": {
+          "base_url": "http://host.docker.internal:11434",
+          "model": "",
+          "max_tokens": 512,
+          "temperature": 0.7,
+          "template_prompt": "Extract the key table from the following PDF text as JSON…",
+          "compose_prompt": "Using the extracted JSON plus the full PDF/RTF text, write me a summary…",
+          "rtf_text": ""
+        }
+      },
+      {
+        "id": "chat_output",
+        "type": "ChatOutput",
+        "display_name": "Chat Output",
+        "position": { "x": 700, "y": 100 },
+        "params": {}
+      }
+    ],
+    "links": [
+      {
+        "source": { "node_id": "pdf_loader", "output": "text" },
+        "target": { "node_id": "ollama_two_phase", "input": "pdf_text" }
+      },
+      {
+        "source": { "node_id": "ollama_two_phase", "output": "response" },
+        "target": { "node_id": "chat_output", "input": "input" }
+      }
+    ]
+  }
+  

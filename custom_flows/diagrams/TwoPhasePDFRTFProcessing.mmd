@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph Extraction
+        PDF[PDF Loader & OCR & ParseData]
+        RTF[RTF Loader & Text Extraction]
+    end
+
+    subgraph Prompts
+        EPT[Extract Prompt Template]
+        CPT[Compose Prompt Template]
+    end
+
+    PDF --> TwoPhase
+    RTF --> TwoPhase
+    EPT --> TwoPhase
+    CPT --> TwoPhase
+
+    TwoPhase[Ollama Two-Phase Component]
+    TwoPhase --> ChatOut[ChatOutput]

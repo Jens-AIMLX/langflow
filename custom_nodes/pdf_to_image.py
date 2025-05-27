@@ -175,14 +175,14 @@ class PdfToImagesComponent(Component):
                 # we have a real filesystem path
                 try:
                     self.log_info(f"Converting from file path: {file_path}")
-                    images = convert_from_path(file_path, dpi=300, poppler_path=poppler_path)
+                    images = convert_from_path(file_path, dpi=600, poppler_path=poppler_path)
                     self.log_info(f"Successfully converted PDF from path with poppler at {poppler_path}")
                 except Exception as e:
                     self.log_error(f"Error converting from path: {e}")
                     # Try without poppler_path as fallback
                     try:
                         self.log_info("Trying conversion without explicit poppler path")
-                        images = convert_from_path(file_path, dpi=300)
+                        images = convert_from_path(file_path, dpi=600)
                         self.log_info("Conversion successful without explicit poppler path")
                     except Exception as e2:
                         self.log_error(f"Second attempt failed: {e2}")
@@ -193,14 +193,14 @@ class PdfToImagesComponent(Component):
                 if isinstance(raw, (bytes, bytearray)):
                     try:
                         self.log_info("Converting from raw bytes")
-                        images = convert_from_bytes(raw, dpi=300, poppler_path=poppler_path)
+                        images = convert_from_bytes(raw, dpi=600, poppler_path=poppler_path)
                         self.log_info(f"Successfully converted PDF from bytes with poppler at {poppler_path}")
                     except Exception as e:
                         self.log_error(f"Error converting from bytes: {e}")
                         # Try without poppler_path as fallback
                         try:
                             self.log_info("Trying conversion from bytes without explicit poppler path")
-                            images = convert_from_bytes(raw, dpi=300)
+                            images = convert_from_bytes(raw, dpi=600)
                             self.log_info("Conversion from bytes successful without explicit poppler path")
                         except Exception as e2:
                             self.log_error(f"Second bytes attempt failed: {e2}")
@@ -209,13 +209,13 @@ class PdfToImagesComponent(Component):
         if images is None and self.pdf_path:
             try:
                 self.log_info(f"Converting from pdf_path: {self.pdf_path}")
-                images = convert_from_path(self.pdf_path, dpi=300, poppler_path=poppler_path)
+                images = convert_from_path(self.pdf_path, dpi=600, poppler_path=poppler_path)
                 self.log_info(f"Successfully converted PDF from pdf_path with poppler at {poppler_path}")
             except Exception as e:
                 self.log_error(f"Error with pdf_path: {e}")
                 try:
                     self.log_info("Trying final conversion without explicit poppler path")
-                    images = convert_from_path(self.pdf_path, dpi=300)
+                    images = convert_from_path(self.pdf_path, dpi=600)
                     self.log_info("Final conversion successful without explicit poppler path")
                 except Exception as e2:
                     raise ValueError(f"Konnte PDF nicht per pdf_path laden: {e2}")
