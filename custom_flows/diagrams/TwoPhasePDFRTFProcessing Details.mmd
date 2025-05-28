@@ -1,0 +1,34 @@
+flowchart LR
+  %% Define the subgraphs with labels
+  subgraph PDF_Ingestion [PDF Ingestion]
+    FilePDF[Source File PDF]
+    PdfImgs[PdfToImagesComponent]
+    OCR[PytesseractLocalOCR]
+    ParsePDF[Data to Message - ParseData]
+    FilePDF --> PdfImgs --> OCR --> ParsePDF
+  end
+
+  subgraph RTF_Ingestion [RTF Ingestion]
+    FileRTF[Source File RTF/Word]
+    ParseRTF[Data to Message - ParseRTF]
+    FileRTF --> ParseRTF
+  end
+
+  %% Prompt definitions
+  PromptExtract[Prompt: Extract Template]
+  PromptCompose[Prompt: Compose Instructions]
+  ChatInput[ChatInput - User Message]
+
+  %% Two-Phase component
+  TwoPhase[Ollama Two-Phase Component]
+
+  %% Final output
+  ChatOut[ChatOutput]
+
+  %% Wire it all together
+  ParsePDF --> TwoPhase
+  ParseRTF --> TwoPhase
+  PromptExtract --> TwoPhase
+  PromptCompose --> TwoPhase
+  ChatInput --> TwoPhase
+  TwoPhase --> ChatOut

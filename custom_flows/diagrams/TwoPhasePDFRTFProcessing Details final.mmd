@@ -1,0 +1,29 @@
+flowchart LR
+  %% PDF ingestion
+  FilePDF["PDF File\n(SourceFile)"]
+  PdfImgs["PdfToImagesComponent\n(PdfToImagesComponent-…)"]
+  OCR["PytesseractLocalOCR\n(TesseractLocalOCR-…)"]
+  ParsePDF["ParseData (PDF)\n(ParseData-…)" ]
+
+  %% RTF ingestion
+  FileRTF["RTF/File Loader\n(DocxLoader-…)"]
+  ParseRTF["ParseData (RTF)\n(ParseDataRTF-…)"]
+
+  %% Prompts & Inputs
+  PromptExtract["Extract Prompt Template\n(Prompt-Jx0tt)"]
+  PromptCompose["Compose/System Prompt\n(Prompt-gdYgY)"]
+  ChatInput["User Query Input\n(ChatInput-KwmJ2)"]
+
+  %% Two-Phase node
+  TwoPhase["Ollama Two-Phase Component\n(OllamaTwoPhase-custom)"]
+
+  %% Final output
+  ChatOut["ChatOutput\n(ChatOutput-1EnB8)"]
+
+  %% Connections
+  FilePDF   --> PdfImgs --> OCR --> ParsePDF --> TwoPhase
+  FileRTF   --> ParseRTF --> TwoPhase
+  PromptExtract --> TwoPhase
+  PromptCompose --> TwoPhase
+  ChatInput --> TwoPhase
+  TwoPhase --> ChatOut

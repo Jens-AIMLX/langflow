@@ -62,11 +62,37 @@ class RTFParserComponent(Component):
                 # Convert to plain text without formatting
                 text = PlaintextWriter.write(doc).getvalue()
 
-            self.status = f"RTF parsed successfully. Extracted {len(text)} characters."
+            # Try to get the original filename
+            # Check if there's a value attribute that contains the original filename
+            filename = os.path.basename(file_path)  # Default fallback
+
+            # Try different ways to access the original filename
+            try:
+                # Method 1: Check if there's a separate value for the filename
+                if hasattr(self, '_attributes') and 'rtf_file' in self._attributes:
+                    attr_value = self._attributes['rtf_file']
+                    if isinstance(attr_value, str) and attr_value and not attr_value.startswith('/'):
+                        filename = attr_value
+
+                # Method 2: Check component inputs for value
+                if filename == os.path.basename(file_path):  # Still using fallback
+                    for input_def in getattr(self, 'inputs', []):
+                        if input_def.name == "rtf_file" and hasattr(input_def, 'value') and input_def.value:
+                            if not input_def.value.startswith('/'):  # Not a file path
+                                filename = input_def.value
+                                break
+            except Exception as e:
+                print(f"[RTF Parser] Could not get original filename: {e}")
+                # Keep the fallback filename
+
+            # Add filename as first line
+            final_text = f"File: {filename}\n\n{text}"
+
+            self.status = f"RTF parsed successfully. Extracted {len(text)} characters from {filename}."
 
             # Return as Message object
             return Message(
-                text=text,
+                text=final_text,
                 sender="RTF Parser",
                 sender_name="RTF Parser Component"
             )
