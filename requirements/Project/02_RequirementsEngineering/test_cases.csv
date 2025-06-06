@@ -1,0 +1,258 @@
+TCID;TCTitle;Status;TestSuite;TestCaseName;Iteration
+01.01.TC01;Validate timeframe mapping and conversion logic;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_timeframe_mapping_and_conversion;1.1
+01.01.TC02;Test support for all OKX API specified timeframes;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_okx_api_timeframe_support;1.1
+01.01.TC03;Verify handling of invalid or unsupported timeframes;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_invalid_timeframe_handling;1.1
+01.01.TC04;Confirm TimeFrame instances are correctly generated;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_timeframe_instance_generation;1.1
+01.01.TC05;Test performance of timeframe conversion;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_timeframe_conversion_performance;1.1
+01.01.TC06;Validate error handling mechanisms;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_error_handling_validation;1.1
+01.01.TC07;Verify collaborative workflow integration;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_collaborative_workflow_verification;1.1
+01.01.TC08;Test OKX Timeframe Manager Comprehensive Validation;passed;simple_tests/Phase_1/test_iteration_1_1_U_okx_timeframe_manager.py;test_1_1_U_comprehensive_validation;1.1
+01.02.TC01;Validate API rate limiting with exponential backoff;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_rate_limiter_initialization;1.2
+01.02.TC02;Test basic request acquisition within rate limits;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_basic_request_acquisition;1.2
+01.02.TC03;Test sliding window mechanism for rate limiting;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_sliding_window_mechanism;1.2
+01.02.TC04;Test enforcement of rate limits;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_rate_limit_enforcement;1.2
+01.02.TC05;Test concurrent request handling by rate limiter;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_concurrent_request_handling;1.2
+01.02.TC06;Test exponential backoff mechanism in rate limiter;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_exponential_backoff_mechanism;1.2
+01.02.TC07;Test successful retry execution after backoff;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_successful_retry_execution;1.2
+01.02.TC08;Test rate limiter performance under load;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_performance_under_load;1.2
+01.02.TC09;Test collaborative workflow verification for rate limiter;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_collaborative_workflow_verification;1.2
+01.02.TC10;Test comprehensive validation of rate limiter;passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_comprehensive_validation;1.2
+01.02.TC11;Test OKX Rate Limiter Initialization (duplicate of TC01 for tracking against simple_tests);passed;simple_tests/Phase_1/test_iteration_1_2_U_okx_rate_limiter.py;test_1_2_U_rate_limiter_initialization;1.2
+01.02.TC12;Test market data fetch using default rate limit configuration;failed;simple_tests/Phase_1/test_iteration_1_2_U_configurable_rate_limits.py;test_market_data_fetch_default_rate_limit;1.2
+01.02.TC13;Test market data fetch with custom (stricter) rate limit configuration;failed;simple_tests/Phase_1/test_iteration_1_2_U_configurable_rate_limits.py;test_market_data_fetch_custom_stricter_rate_limit;1.2
+01.03-TC01;Validate rolling window operations and memory efficiency;passed;tests/unit_tests/adapters/okx/enhanced/test_rolling_data_manager.py;Validate rolling window operations and memory efficiency;1.3
+01.03-TC02;Verify rolling window update performance;passed;tests/unit_tests/adapters/okx/enhanced/test_rolling_data_manager.py;Verify rolling window update performance;1.3
+01.04-TC01;Validate custom timeframe aggregation accuracy;passed;tests/unit_tests/adapters/okx/enhanced/test_bar_aggregator.py;Validate custom timeframe aggregation accuracy;1.4
+01.05-TC01;Validate Phase 1 components integration;passed;tests/integration_tests/okx/phase1/test_1_5_I_phase1_integration.py;Validate Phase 1 components integration;1.5
+01.06-TC01;Foundation system validation for OKX timeframe management;passed;tests/system_tests/okx/phase1/test_1_6_S_foundation_system.py;Foundation system validation for OKX timeframe management;1.6
+02.01-TC01;Validate real OKX API integration;passed;tests/integration_tests/okx/phase2/test_2_1_U_okx_real_api_integration.py;Validate real OKX API integration;2.1
+02.01-TC02;Validate OKX credentials integration;passed;tests/integration_tests/okx/phase2/test_2_1_U_okx_credentials_integration.py;Validate OKX credentials integration;2.1
+02.01-TC03;Validate OKX API compliance;passed;tests/integration_tests/okx/phase2/test_2_1_U_okx_api_compliance.py;Validate OKX API compliance;2.1
+02.02-TC01;Validate enhanced OKXDataClient integration and backward compatibility;passed;tests/unit_tests/adapters/okx/test_2_2_U_enhanced_okx_data_client.py;Validate enhanced OKXDataClient integration and backward compatibility;2.2
+02.02-TC02;Test backward compatibility and performance of enhanced OKXDataClient;passed;tests/unit_tests/adapters/okx/test_2_2_U_enhanced_okx_data_client.py;Test backward compatibility and performance of enhanced OKXDataClient;2.2
+02.02-TC03;Validate WebSocket integration for bar subscriptions in OKXDataClient;passed;tests/unit_tests/adapters/okx/test_2_2_U_enhanced_okx_data_client.py;Validate WebSocket integration for bar subscriptions in OKXDataClient;2.2
+02.03-TC01;Validate data persistence (storage/retrieval) and recovery;passed;tests/unit_tests/adapters/okx/persistence/test_data_store.py;Validate data persistence (storage/retrieval) and recovery;2.3
+02.03-TC02;Benchmark data persistence operations performance;passed;tests/unit_tests/adapters/okx/persistence/test_data_store.py;Benchmark data persistence operations performance;2.3
+02.04-TC01;End-to-end testing of data pipeline with persistence, including load and error recovery;passed;tests/integration_tests/okx/phase2/test_phase2_integration.py;End-to-end testing of data pipeline with persistence, including load and error recovery;2.4
+02.05-TC01;System validation of data management pipeline (4-stage methodology);passed;tests/system_tests/okx/phase2/test_phase2_system.py;System validation of data management pipeline (4-stage methodology);2.5
+03.00-TC01;Validate Nautilus Trader development environment setup and import capabilities;passed;;Validate Nautilus Trader development environment setup and import capabilities;3.0
+03.01-TC01;Validate Supabase authentication flow and JWT token validation;passed;simple_tests/test_3_1_U_auth_bridge.py;Validate Supabase authentication flow and JWT token validation;3.1
+03.01-TC02;Validate user session management in Authentication Bridge;passed;simple_tests/test_3_1_U_auth_bridge.py;Validate user session management in Authentication Bridge;3.1
+03.02-TC01;Validate data conversion accuracy in DataIntegrationService;passed;simple_tests/test_3_2_U_data_integration_service.py;Validate data conversion accuracy in DataIntegrationService;3.2
+03.02-TC02;Validate caching performance in DataIntegrationService;passed;simple_tests/test_3_2_U_data_integration_service.py;Validate caching performance in DataIntegrationService;3.2
+03.03-TC01;Validate order submission flow and risk management;in progress;simple_tests/test_3_3_U_order_integration_service.py;Validate order submission flow and risk management;3.3
+03.03-TC02;Validate real-time order status updates;in progress;simple_tests/test_3_3_U_order_integration_service.py;Validate real-time order status updates;3.3
+03.04-TC01;Validate real-time data streaming via WebSocket and connection handling;in progress;nautilus_trader/integrations/market_whisperer/websocket_service.py;Validate real-time data streaming via WebSocket and connection handling;3.4
+03.04-TC02;Validate WebSocket client connection management;in progress;nautilus_trader/integrations/market_whisperer/websocket_service.py;Validate WebSocket client connection management;3.4
+03.05-TC01;End-to-end integration testing of Market Whisperer layer;open;tests/integration_tests/market_whisperer/test_phase3_integration.py;End-to-end integration testing of Market Whisperer layer;3.5
+03.06-TC01;Validate zero-mock integration tests for Market Whisperer and Nautilus Trader;open;tests/integration_tests/test_zero_mock_integration.py;Validate zero-mock integration tests for Market Whisperer and Nautilus Trader;3.6
+04.01-TC01;Validate React component rendering and responsiveness;open;nautilus_trader/web/components/;Validate React component rendering and responsiveness;4.1
+04.01-TC02;Validate functionality of authentication, dashboard, and settings React components;open;nautilus_trader/web/components/;Validate functionality of authentication, dashboard, and settings React components;4.1
+04.02-TC01;Validate frontend API and WebSocket service integration and stability;open;nautilus_trader/web/services/;Validate frontend API and WebSocket service integration and stability;4.2
+04.03-TC01;Validate frontend configuration loading and environment switching;open;nautilus_trader/web/config/app.config.ts;Validate frontend configuration loading and environment switching;4.3
+04.04-TC01;End-to-end frontend testing, including user journey and cross-browser compatibility;open;tests/integration_tests/frontend/test_phase4_frontend_integration.py;End-to-end frontend testing, including user journey and cross-browser compatibility;4.4
+05.01-TC01;Validate enhanced OKX configuration options and validation rules;open;nautilus_trader/adapters/okx/config.py;Validate enhanced OKX configuration options and validation rules;5.1
+05.02-TC01;Validate factory methods for creating enhanced components with dependency injection;open;nautilus_trader/adapters/okx/factories.py;Validate factory methods for creating enhanced components with dependency injection;5.2
+05.03-TC01;Validate Market Whisperer integration configuration and security settings;open;nautilus_trader/integrations/market_whisperer/config.py;Validate Market Whisperer integration configuration and security settings;5.3
+05.04-TC01;End-to-end configuration and factory integration tests;open;tests/integration_tests/config/test_phase5_config_factory_integration.py;End-to-end configuration and factory integration tests;5.4
+06.01-TC01;Execute unit tests and verify code coverage for all components;open;tests/unit_tests/;Execute unit tests and verify code coverage for all components;6.1
+06.02-TC01;Execute integration tests covering complete user workflows;open;tests/integration_tests/;Execute integration tests covering complete user workflows;6.2
+06.03-TC01;Execute Tier 3 system tests (4-stage methodology) and validate against production criteria;open;tests/system_tests/test_tier3_system.py;Execute Tier 3 system tests (4-stage methodology) and validate against production criteria;6.3
+06.04-TC01;Execute performance tests (load, latency, stress) and benchmark results;open;tests/performance_tests/;Execute performance tests (load, latency, stress) and benchmark results;6.4
+06.05-TC01;Perform security penetration testing and error scenario validation;open;tests/security_tests/;Perform security penetration testing and error scenario validation;6.5
+06.06-TC01;Review all test execution reports and provide a final validation summary;open;;Review all test execution reports and provide a final validation summary;6.6
+07.01-TC01;Validate Docker deployment, health checks, and logging configuration;open;deployment/docker-compose.yml;Validate Docker deployment, health checks, and logging configuration;7.1
+07.02-TC01;Validate monitoring system metric collection and alert triggering;open;monitoring/prometheus.yml;Validate monitoring system metric collection and alert triggering;7.2
+07.03-TC01;Review and validate all operational documentation for completeness and accuracy;open;docs/;Review and validate all operational documentation for completeness and accuracy;7.3
+07.04-TC01;Execute production readiness checklist and validate against all criteria;open;;Execute production readiness checklist and validate against all criteria;7.4
+07.05-TC01;Monitor system health and performance post go-live;open;;Monitor system health and performance post go-live;7.5
+TC0027;Validate rolling data manager initialization;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_rolling_data_manager_initialization;1.3
+TC0028;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_rolling_window_algorithm;
+TC0029;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_bar_validation_logic;
+TC0030;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_data_access_patterns;
+TC0031;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_statistics_tracking;
+TC0032;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_concurrent_access_simulation;
+TC0033;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_memory_efficiency;
+TC0034;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_memory_usage;
+TC0035;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_3_U_okx_rolling_data_manager.py;test_collaborative_workflow_verification_rolling_data;
+TC0036;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_bar_aggregator_initialization;
+TC0037;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_timeframe_parsing_logic;
+TC0038;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_ohlcv_aggregation_logic;
+TC0039;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_timeframe_boundary_alignment;
+TC0040;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_bar_completion_logic;
+TC0041;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_aggregation_accuracy;
+TC0042;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_memory_efficiency;
+TC0043;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_memory_usage_pattern;
+TC0044;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_4_U_okx_bar_aggregator.py;test_collaborative_workflow_verification_bar_aggregator;
+TC0045;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_enhanced_component_integration;
+TC0046;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_custom_timeframe_integration;
+TC0047;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_multi_symbol_integration;
+TC0048;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_data_flow_validation;
+TC0049;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_configuration_consistency;
+TC0050;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_error_handling_integration;
+TC0051;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_performance_integration;
+TC0052;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_backward_compatibility_validation;
+TC0053;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_collaborative_workflow_verification;
+TC0054;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_comprehensive_validation;
+TC0055;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_enhanced_components_integration;
+TC0056;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_async_integration_workflow;
+TC0057;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_enhanced_backward_compatibility_validation;
+TC0058;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_5_I_phase1_integration.py;test_1_5_I_enhanced_configuration_consistency_validation;
+TC0059;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_complete_system_startup;
+TC0060;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_end_to_end_workflow_validation;
+TC0061;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_multi_symbol_system_operation;
+TC0062;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_stress_testing_concurrent_load;
+TC0063;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_memory_management_validation;
+TC0064;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_performance_baseline_establishment;
+TC0065;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_reliability_extended_operation;
+TC0066;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_collaborative_workflow_verification;
+TC0067;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_comprehensive_validation;
+TC0068;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_foundation_basic_functionality;
+TC0069;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_enhanced_async_operations;
+TC0070;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_enhanced_mock_data_processing;
+TC0071;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_enhanced_error_handling;
+TC0072;;Not Implemented;simple_tests/Iteration_1/test_iteration_1_6_S_foundation_system.py;test_1_6_S_enhanced_memory_management;
+TC0073;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_endpoint_urls_compliance;
+TC0074;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_parameter_names_compliance;
+TC0075;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_limit_validation_compliance;
+TC0076;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_timeframe_compliance;
+TC0077;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_instrument_id_compliance;
+TC0078;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_pagination_compliance;
+TC0079;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_authentication_compliance;
+TC0080;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_api_compliance.py;test_2_1_U_api_compliance_summary;
+TC0081;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_environment_variable_credentials;
+TC0082;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_config_credential_override;
+TC0083;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_http_client_authentication;
+TC0084;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_demo_vs_live_mode;
+TC0085;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_market_data_endpoint_access;
+TC0086;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_credentials_integration.py;test_2_1_U_credential_integration_workflow;
+TC0087;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_candles_response_parsing;
+TC0088;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_candles_error_response;
+TC0089;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_candles_to_bars_conversion;
+TC0090;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_candles_params_validation;
+TC0091;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_history_candles_params_validation;
+TC0092;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_endpoint_parameter_defaults;
+TC0093;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_mock_data_client_creation;
+TC0094;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_timeframe_manager_mock_behavior;
+TC0095;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_api_endpoint_mock_behavior;
+TC0096;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_1_U_okx_real_api_integration.py;test_2_1_U_integration_pattern_validation;
+TC0097;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_enhanced_components_initialization;
+TC0098;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_bar_subscription_integration;
+TC0099;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_websocket_bar_handling;
+TC0100;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_rate_limiter_integration;
+TC0101;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_bar_aggregation_workflow;
+TC0102;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_rolling_data_manager_integration;
+TC0103;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_enhanced_request_bars_workflow;
+TC0104;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_candlestick_data_parsing;
+TC0105;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_bar_type_matching;
+TC0106;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_2_U_enhanced_okx_data_client.py;test_2_2_U_enhanced_integration_summary;
+TC0107;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_3_U_persistence_layer.py;test_mock_data_store_basic_operations;
+TC0108;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_3_U_persistence_layer.py;test_mock_data_store_limit;
+TC0109;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_3_U_persistence_layer.py;test_mock_data_store_latest_bar;
+TC0110;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_3_U_persistence_layer.py;test_mock_data_store_storage_stats;
+TC0111;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_3_U_persistence_layer.py;test_persistence_manager_mock_functionality;
+TC0112;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_end_to_end_data_pipeline;
+TC0113;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_real_time_performance_validation;
+TC0114;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_load_testing_high_volume;
+TC0115;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_error_recovery_scenarios;
+TC0116;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_persistence_integration_validation;
+TC0117;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_comprehensive_performance_analysis;
+TC0118;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_multi_symbol_concurrent_processing;
+TC0119;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_memory_management_validation;
+TC0120;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_data_consistency_validation;
+TC0121;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_4_I_phase2_integration.py;test_2_4_I_integration_summary_validation;
+TC0122;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_5_S_phase2_system.py;test_2_5_S_stage1_design_comprehensive_system_tests;
+TC0123;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_5_S_phase2_system.py;test_2_5_S_stage2_execution_7600_bar_window_validation;
+TC0124;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_5_S_phase2_system.py;test_2_5_S_stage3_fixing_iterative_improvement_cycles;
+TC0125;;Not Implemented;simple_tests/Iteration_2/test_iteration_2_5_S_phase2_system.py;test_2_5_S_stage4_acceptance_formal_evaluation;
+TC0126;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_primary_goal_achievement;
+TC0127;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_technical_requirements;
+TC0128;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_performance_requirements;
+TC0129;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_quality_requirements;
+TC0130;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_deliverable_completeness;
+TC0131;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_integration_readiness;
+TC0132;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_async;
+TC0133;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_final_acceptance_criteria;
+TC0134;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_status_documentation_exists;
+TC0135;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_test_suite_completeness;
+TC0136;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_A_acceptance.py;test_ready_for_next_iteration;
+TC0137;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_okx_adapter_import;
+TC0138;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_okx_config_creation;
+TC0139;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_supabase_import_capability;
+TC0140;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_environment_variable_detection;
+TC0141;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_okx_http_client_creation;
+TC0142;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_okx_api_connectivity;
+TC0143;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_supabase_client_creation;
+TC0144;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_supabase_connectivity;
+TC0145;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_okx_mock_integration;
+TC0146;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_supabase_mock_integration;
+TC0147;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_async_support;
+TC0148;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_async_function;
+TC0149;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_json_handling;
+TC0150;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_http_client_availability;
+TC0151;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_I_api_integration.py;test_websocket_support;
+TC0152;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_import_performance;
+TC0153;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_object_creation_performance;
+TC0154;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_memory_usage;
+TC0155;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_concurrent_operations;
+TC0156;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_large_data_handling;
+TC0157;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_repeated_operations;
+TC0158;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_garbage_collection_performance;
+TC0159;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_full_workflow_simulation;
+TC0160;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_error_handling_performance;
+TC0161;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_dll_loading_performance;
+TC0162;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_compiled_extension_performance;
+TC0163;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_cpu_usage;
+TC0164;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_S_performance.py;test_disk_io_performance;
+TC0165;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_python_environment;
+TC0166;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_rust_toolchain;
+TC0167;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_poetry_availability;
+TC0168;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_nautilus_trader_import;
+TC0169;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_core_functionality;
+TC0170;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_required_packages;
+TC0171;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_build_artifacts;
+TC0172;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_project_structure;
+TC0173;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_testing_infrastructure;
+TC0174;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_performance_baseline;
+TC0175;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_environment_variables;
+TC0176;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_0_U_dev_environment.py;test_git_configuration;
+TC0177;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_auth_bridge_initialization;
+TC0178;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_auth_bridge_authentication_success;
+TC0179;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_auth_bridge_authentication_failure;
+TC0180;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_auth_bridge_session_limit_enforcement;
+TC0181;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_real_supabase_authentication_with_existing_users;
+TC0182;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_real_supabase_user_registration_capability;
+TC0183;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_real_market_whisperer_database_connectivity;
+TC0184;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_real_user_registration_capability_testing;
+TC0185;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge.py;test_3_1_U_real_existing_user_authentication_testing;
+TC0186;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge_database_integration.py;test_user_credentials;
+TC0187;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge_database_integration.py;test_3_1_U_supabase_database_connectivity;
+TC0188;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge_database_integration.py;test_3_1_U_real_user_registration_flow;
+TC0189;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge_database_integration.py;test_3_1_U_real_user_authentication_with_existing_account;
+TC0190;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_1_U_auth_bridge_database_integration.py;test_3_1_U_database_user_session_management;
+TC0191;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_data_service_initialization;
+TC0192;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_data_service_shutdown;
+TC0193;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_nautilus_to_mw_format_conversion;
+TC0194;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_nautilus_to_mw_format_conversion_empty;
+TC0195;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_get_market_data_cache_miss_and_hit;
+TC0196;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_get_market_data_cache_ttl_invalidation;
+TC0197;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_get_market_data_invalid_exchange;
+TC0198;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_get_market_data_rolling_manager_failure;
+TC0199;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_performance_metrics_accuracy;
+TC0200;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_data_sync_placeholder;
+TC0201;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_conversion_accuracy_real_bars;
+TC0202;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_cache_performance_benchmark;
+TC0203;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_cache_max_size_enforcement;
+TC0204;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_integration_with_mocked_rdm;
+TC0205;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_2_U_data_integration_service.py;test_3_2_U_cache_complex_cleanup_scenario;
+TC0206;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_smoke;
+TC0207;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_order_submission_success;
+TC0208;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_order_submission_invalid_instrument;
+TC0209;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_order_cancellation_success;
+TC0210;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_order_cancellation_not_found;
+TC0211;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_order_factory_integration;
+TC0212;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_invalid_order_parameters;
+TC0213;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_price_quantity_precision;
+TC0214;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_full_order_lifecycle;
+TC0215;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_parameter_validation_schema;
+TC0216;;Not Implemented;simple_tests/Iteration_3/test_iteration_3_3_U_order_integration_srv.py;test_3_3_U_mock_kernel_integration;

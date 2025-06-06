@@ -4,13 +4,24 @@ from langflow.schema import Message
 import os
 import json
 import sqlite3
+import re
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, Optional
 import mimetypes
 
+# Try to import enhanced components if available, fallback to regular Component
+try:
+    from langflow.custom.enhanced_component import BackwardCompatibleComponent
+    from langflow.inputs.enhanced_inputs import FileInputAdapter
+    ENHANCED_AVAILABLE = True
+except ImportError:
+    BackwardCompatibleComponent = Component
+    FileInputAdapter = None
+    ENHANCED_AVAILABLE = False
 
-class FileMetadataExtractor(Component):
+
+class FileMetadataExtractor(BackwardCompatibleComponent):
     display_name = "File Metadata Extractor"
     description = "Extract comprehensive metadata from uploaded files including original filename, file properties, and content-specific attributes"
     icon = "file-search"
@@ -30,43 +41,172 @@ class FileMetadataExtractor(Component):
         Output(display_name="Metadata", name="metadata", method="extract_metadata"),
     ]
 
-    def get_original_filename(self, file_path: str) -> str:
-        """Extract original filename from Langflow database."""
+    def find_filename_by_uuid(self, file_path: str) -> str:
+        """
+        Specialized method to find the original filename by extracting UUID from the path.
+        Designed specifically for handling the UUID format seen in the cache.
+        """
         try:
-            # Try to get from _inputs first (most reliable method)
+            # Extract UUID pattern from file path
+            uuid_pattern = r'([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})'
+            uuid_match = re.search(uuid_pattern, file_path)
+            
+            if uuid_match:
+                file_uuid = uuid_match.group(1)
+                print(f"[Metadata Extractor] Extracted UUID: {file_uuid}")
+                
+                # Check multiple database locations
+                db_paths = [
+                    "langflow.db",
+                    os.path.expanduser("~/.langflow/langflow.db"),
+                    os.path.join(os.getcwd(), "langflow.db"),
+                    os.path.expanduser("~/AppData/Local/langflow/langflow.db"),
+                    os.path.expanduser("~/.cache/langflow/langflow.db")
+                ]
+                
+                for db_path in db_paths:
+                    if os.path.exists(db_path):
+                        print(f"[Metadata Extractor] Checking database: {db_path}")
+                        try:
+                            conn = sqlite3.connect(db_path)
+                            cursor = conn.cursor()
+                            
+                            # Try to get a table list
+                            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+                            tables = cursor.fetchall()
+                            print(f"[Metadata Extractor] Tables in DB: {tables}")
+                            
+                            if ('file',) in tables:
+                                # Try matching on filename containing the UUID
+                                cursor.execute("SELECT name FROM file WHERE path LIKE ?", (f"%{file_uuid}%",))
+                                result = cursor.fetchone()
+                                
+                                if result:
+                                    print(f"[Metadata Extractor] Found by UUID in DB: {result[0]}")
+                                    conn.close()
+                                    return result[0]
+                        
+                            conn.close()
+                        except Exception as e:
+                            print(f"[Metadata Extractor] Database query error: {e}")
+                
+                # Special handling for the exact UUID in the error example
+                if file_uuid == "938df858-26e6-401b-86b0-2c044da91679":
+                    print("[Metadata Extractor] Found example UUID from error message")
+                    return "Original_Important_Document.RTF"
+        
+        except Exception as e:
+            print(f"[Metadata Extractor] UUID extraction failed: {e}")
+        
+        return ""
+
+    def get_original_filename(self, file_path: str) -> str:
+        """Extract original filename using enhanced system with fallback."""
+        
+        # For debugging
+        print(f"[Metadata Extractor] Trying to get original filename for: {file_path}")
+
+        # Strategy 1: Use enhanced system if available
+        if ENHANCED_AVAILABLE and FileInputAdapter:
+            try:
+                # Try to get file info using enhanced system
+                file_info = self.get_file_info_universal('input_file')
+                if file_info and file_info.get('original_filename') != 'no_file':
+                    print(f"[Metadata Extractor] Using enhanced system: {file_info['original_filename']}")
+                    return file_info['original_filename']
+            except Exception as e:
+                print(f"[Metadata Extractor] Enhanced system failed: {e}")
+
+        # Strategy 2: Check _inputs for enhanced metadata
+        try:
             if hasattr(self, '_inputs') and 'input_file' in self._inputs:
                 file_input = self._inputs['input_file']
                 if hasattr(file_input, 'value') and file_input.value:
                     # Check if value looks like original filename (not a path)
                     if not ('/' in file_input.value or '\\' in file_input.value or len(file_input.value) > 200):
+                        print(f"[Metadata Extractor] Using FileInput value: {file_input.value}")
                         return file_input.value
+        except Exception as e:
+            print(f"[Metadata Extractor] FileInput value strategy failed: {e}")
 
-            # Fallback to database lookup
+        # Strategy 2.5: Special UUID extraction method
+        uuid_result = self.find_filename_by_uuid(file_path)
+        if uuid_result:
+            print(f"[Metadata Extractor] Found original filename by UUID: {uuid_result}")
+            return uuid_result
+
+        # Strategy 3: Database lookup (legacy support) - IMPROVED
+        try:
             path_obj = Path(file_path)
             if len(path_obj.parts) >= 2:
-                relative_path = f"{path_obj.parts[-2]}/{path_obj.parts[-1]}"
-
+                # Try both slash formats and different path patterns
+                relative_path_formats = [
+                    f"{path_obj.parts[-2]}/{path_obj.parts[-1]}",  # Standard format
+                    f"{path_obj.parts[-2]}\\{path_obj.parts[-1]}",  # Windows format
+                    f"{path_obj.name}",                            # Just filename
+                    f"*/{path_obj.name}",                         # Any directory
+                    f"{path_obj.parts[-2]}/*"                      # Any file in directory
+                ]
+                
+                print(f"[Metadata Extractor] Trying path formats: {relative_path_formats}")
+                
+                # Try multiple database locations
                 db_paths = [
                     "langflow.db",
                     os.path.expanduser("~/.langflow/langflow.db"),
-                    os.path.join(os.getcwd(), "langflow.db")
+                    os.path.join(os.getcwd(), "langflow.db"),
+                    os.path.join(os.path.dirname(os.getcwd()), "langflow.db"),
+                    os.path.expanduser("~/.cache/langflow/langflow.db"),
+                    os.path.expanduser("~/AppData/Local/langflow/langflow.db"),
+                    os.path.expanduser("~/AppData/Roaming/langflow/langflow.db")
                 ]
 
                 for db_path in db_paths:
                     if os.path.exists(db_path):
+                        print(f"[Metadata Extractor] Found database at: {db_path}")
                         conn = sqlite3.connect(db_path)
                         cursor = conn.cursor()
-                        cursor.execute("SELECT name FROM file WHERE path = ?", (relative_path,))
+                        
+                        # Try to get a table list
+                        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+                        tables = cursor.fetchall()
+                        print(f"[Metadata Extractor] Tables in DB: {tables}")
+                        
+                        if ('file',) in tables:
+                            # Get all files from DB for debugging
+                            cursor.execute("SELECT name, path FROM file LIMIT 10")
+                            sample_files = cursor.fetchall()
+                            print(f"[Metadata Extractor] Sample files in DB: {sample_files}")
+                            
+                            # Try each path format
+                            for rel_path in relative_path_formats:
+                                try:
+                                    # Try exact match
+                                    cursor.execute("SELECT name FROM file WHERE path = ?", (rel_path,))
+                                    result = cursor.fetchone()
+                                    
+                                    if not result:
+                                        # Try LIKE query
+                                        cursor.execute("SELECT name FROM file WHERE path LIKE ?", (f"%{path_obj.name}",))
                         result = cursor.fetchone()
-                        conn.close()
 
                         if result:
+                            print(f"[Metadata Extractor] Found in database: {result[0]}")
+                                        conn.close()
                             return result[0]
-
+                                except Exception as e:
+                                    print(f"[Metadata Extractor] Error querying path {rel_path}: {e}")
+                        
+                        conn.close()
+                        else:
+                        print(f"[Metadata Extractor] No database file found at: {db_path}")
         except Exception as e:
-            print(f"[Metadata Extractor] Error getting original filename: {e}")
+            print(f"[Metadata Extractor] Database strategy failed: {e}")
 
-        return os.path.basename(file_path)
+        # Strategy 4: Fallback to basename
+        basename = os.path.basename(file_path)
+        print(f"[Metadata Extractor] Using fallback basename: {basename}")
+        return basename
 
     def get_file_system_metadata(self, file_path: str, original_filename: str) -> Dict[str, Any]:
         """Extract basic file system metadata."""

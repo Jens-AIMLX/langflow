@@ -1,0 +1,74 @@
+"Hello AI, I need your assistance with updating our project's requirements and test case documentation. Please follow the specific processes outlined in our project's strategic documents.
+
+**Primary Goal:**
+Ensure that requirements\Project\02_RequirementsEngineering\use_cases.csv , requirements\Project\02_RequirementsEngineering\test_cases.csv, and requirements\Project\02_RequirementsEngineering\REQID_TCID.csv (all located in `requirements/Project/02_RequirementsEngineering/`) are accurately updated to reflect recent development work and new/modified test cases for [Specify Feature Name/ID and/or User Story Name(s)/ID(s) you've been working on].
+If you see gaps in the current use cases of an analysed iteratioh in the way that they do not fully project the iteration goals show it to me.
+If you see a user story not having at least two test cases, construct those testcases.
+If you see a delta beetween the current test cases under folder simple_tests and the test cases list, close that delta by updatingn the test:cases.csv
+After list updates, reexecute all testcases and exa<mine the results.
+If there are errors in your test results, fix them and reexecute until you have poitive results or need advice
+If the status in test_cases.csv does not reflect the current real testcase status after reexecution, update test_cases.csv 
+
+**Key Guiding Documents (Please read and adhere to these):**
+
+1.  **`PLATS.md` (`requirements/BestPractice/Project_Lifecycle_And_Testing_Strategy.md`):**
+    *   Pay close attention to **Section 3: Requirements Engineering and Management** for rules on IDs, CSV formatting, and the overall process.
+    *   Refer to **Section 3.4: CSV Formatting and Key Rules** for structural integrity, especially the requirements for Feature/User Story and User Story/Test Case linkage counts.
+2.  **`CDP.md` (`requirements/BestPractice/Collaborative_Development_Process.md`):**
+    *   Focus on **Stage 3: Implementation & Unit Testing**, **Stage 4: Local Integration & Fast System Testing**, and **Section 4: Continuous Activities - Requirements Tracking Updates**. This details when and how these CSVs should be updated during the development flow.
+3.  **`GIP.md` (`requirements/Project/General_Implementation_Plan.md`):**
+    *   Use this to understand the current iteration/phase context if needed, especially for deriving `Iteration` field values in `test_cases.csv`.
+
+**Specific Tasks & Information to Provide:**
+
+**1. Identify New/Modified Test Cases:**
+    *   I have recently worked on [Briefly describe the feature/user story, e.g., "the user login module for User Story 03.01.01"].
+    *   The new/modified test scripts are located in: [Specify path(s) to test files, e.g., `tests/unit/test_authentication.py`, `simple_tests/iteration3/test_login_flow.py`].
+    *   Please scan these files and identify all new or significantly modified test functions/methods.
+
+**2. Update `test_cases.csv`:**
+    *   For each **new** test case identified:
+        *   **`TCID`**: Generate a new `TCID` following the `XX.YY.TCZZ` format (where `XX.YY` is the Feature REQID, e.g., `03.01`, and `ZZ` is a new sequential number for that feature).
+        *   **`TCTitle`**: Create a concise, descriptive title for the test case based on its purpose or the test function name.
+        *   **`Status`**: Set to [Specify current status, e.g., 'passed' if you've run them successfully, 'untested', 'in progress'].
+        *   **`TestSuite`**: The relative path to the test file (e.g., `tests/unit/test_authentication.py`).
+        *   **`TestCaseName`**: The exact name of the test function/method (e.g., `test_valid_login_credentials`).
+        *   **`Iteration`**: The current project iteration ID from `GIP.md` that this test case primarily relates to (e.g., `3.1`).
+    *   For each **modified** test case, update its corresponding row in `test_cases.csv` if its `TCTitle`, `Status`, `TestSuite`, `TestCaseName`, or `Iteration` has changed.
+
+**3. Update `REQID_TCID.csv` (Crucial Semantic Mapping - Human Responsibility Confirmation):**
+    *   For each **new** `TCID` added to requirements\Project\02_RequirementsEngineering\REQID_TCID.csv, I need to link it to the relevant User Story `REQID`(s) it verifies.
+    *   **As per `CDP.md` and `PLATS.md`, this semantic mapping is primarily a human responsibility.**
+    *   However, you can help me prepare:
+        *   List all new `TCID`s you've generated.
+        *   For each new `TCID`, identify the User Story `REQID`(s) it *most likely* covers based on its `TCTitle`, `TestCaseName`, and the feature/user story context I provided above.
+        *   Present these proposed mappings (REQID <-> TCID) to me for confirmation before you add them to requirements\Project\02_RequirementsEngineering\REQID_TCID.csv. If unsure, list the TCID and ask me to provide the REQID(s).
+    *   Ensure no duplicate REQID-TCID pairs are added.
+
+**4. Update `use_cases.csv` (If Applicable):**
+    *   If any new User Stories, Features, or Epics were implicitly created or significantly modified by this work (less common for this specific update task but possible):
+        *   Identify these based on my description of work.
+        *   Propose new rows or modifications for `use_cases.csv` following the `REQID`, `REQType`, `REQTitle` conventions. (Confirm with me before applying).
+
+**5. Health Check Awareness:**
+    *   While updating, keep in mind the health check rules from `PLATS.md` (Section 3.4 and 5.3 of `CDP.md`'s reference to PLATS), particularly:
+        *   Each Feature should have at least two User Stories.
+        *   Each User Story should have at least two Test Cases assigned viarequirements\Project\02_RequirementsEngineering\REQID_TCID.csv.
+    *   If your updates might lead to a violation (e.g., a new User Story with only one test case so far), please flag this.
+
+**Expected Output:**
+
+*   A list of proposed changes (additions/updates) to `test_cases.csv`.
+*   A list of proposed new mappings for requirements\Project\02_RequirementsEngineering\REQID_TCID.csv (for my confirmation).
+*   Any proposed changes for `use_cases.csv` (if applicable, for my confirmation).
+*   A confirmation that all `TCID`s follow the `XX.YY.TCZZ` pattern.
+*   Notification of any potential health check rule violations your updates might create.
+*   Once I confirm the proposed mappings and any `use_cases.csv` changes, please provide the exact content to be written or the commands to update these CSV files.
+
+**Important Notes for AI:**
+
+*   Strictly adhere to the semicolon (`;`) delimiter and quoting rules for CSV files as defined in `PLATS.md`.
+*   Do not make assumptions beyond the information provided and the content of the guiding documents. Ask for clarification if needed.
+*   The final semantic link in `REQID_TCID.csv` requires human confirmation.
+
+Please begin by confirming you have access to and have reviewed the referenced `.md` documents. Then, proceed with Task 1 (Identify New/Modified Test Cases) based on the context I've provided for [Specify Feature Name/ID and/or User Story Name(s)/ID(s)]."

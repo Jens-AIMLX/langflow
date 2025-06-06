@@ -1,0 +1,283 @@
+Category;Description;TCID;REQID;MappedTCsCount;FeatureREQID;UserStoryCount
+C2;TCID 'TC0009' from test_cases.csv is not mapped in REQID_TCID.csv;TC0009;;;;
+C2;TCID 'TC0010' from test_cases.csv is not mapped in REQID_TCID.csv;TC0010;;;;
+C2;TCID 'TC0011' from test_cases.csv is not mapped in REQID_TCID.csv;TC0011;;;;
+C2;TCID 'TC0012' from test_cases.csv is not mapped in REQID_TCID.csv;TC0012;;;;
+C2;TCID 'TC0013' from test_cases.csv is not mapped in REQID_TCID.csv;TC0013;;;;
+C2;TCID 'TC0014' from test_cases.csv is not mapped in REQID_TCID.csv;TC0014;;;;
+C2;TCID 'TC0015' from test_cases.csv is not mapped in REQID_TCID.csv;TC0015;;;;
+C2;TCID 'TC0016' from test_cases.csv is not mapped in REQID_TCID.csv;TC0016;;;;
+C2;TCID 'TC0017' from test_cases.csv is not mapped in REQID_TCID.csv;TC0017;;;;
+C2;TCID 'TC0018' from test_cases.csv is not mapped in REQID_TCID.csv;TC0018;;;;
+C2;TCID 'TC0019' from test_cases.csv is not mapped in REQID_TCID.csv;TC0019;;;;
+C2;TCID 'TC0020' from test_cases.csv is not mapped in REQID_TCID.csv;TC0020;;;;
+C2;TCID 'TC0021' from test_cases.csv is not mapped in REQID_TCID.csv;TC0021;;;;
+C2;TCID 'TC0022' from test_cases.csv is not mapped in REQID_TCID.csv;TC0022;;;;
+C2;TCID 'TC0023' from test_cases.csv is not mapped in REQID_TCID.csv;TC0023;;;;
+C2;TCID 'TC0024' from test_cases.csv is not mapped in REQID_TCID.csv;TC0024;;;;
+C2;TCID 'TC0025' from test_cases.csv is not mapped in REQID_TCID.csv;TC0025;;;;
+C2;TCID 'TC0026' from test_cases.csv is not mapped in REQID_TCID.csv;TC0026;;;;
+C2;TCID 'TC0027' from test_cases.csv is not mapped in REQID_TCID.csv;TC0027;;;;
+C2;TCID 'TC0028' from test_cases.csv is not mapped in REQID_TCID.csv;TC0028;;;;
+C2;TCID 'TC0029' from test_cases.csv is not mapped in REQID_TCID.csv;TC0029;;;;
+C2;TCID 'TC0030' from test_cases.csv is not mapped in REQID_TCID.csv;TC0030;;;;
+C2;TCID 'TC0031' from test_cases.csv is not mapped in REQID_TCID.csv;TC0031;;;;
+C2;TCID 'TC0032' from test_cases.csv is not mapped in REQID_TCID.csv;TC0032;;;;
+C2;TCID 'TC0033' from test_cases.csv is not mapped in REQID_TCID.csv;TC0033;;;;
+C2;TCID 'TC0034' from test_cases.csv is not mapped in REQID_TCID.csv;TC0034;;;;
+C2;TCID 'TC0035' from test_cases.csv is not mapped in REQID_TCID.csv;TC0035;;;;
+C2;TCID 'TC0036' from test_cases.csv is not mapped in REQID_TCID.csv;TC0036;;;;
+C2;TCID 'TC0037' from test_cases.csv is not mapped in REQID_TCID.csv;TC0037;;;;
+C2;TCID 'TC0038' from test_cases.csv is not mapped in REQID_TCID.csv;TC0038;;;;
+C2;TCID 'TC0039' from test_cases.csv is not mapped in REQID_TCID.csv;TC0039;;;;
+C2;TCID 'TC0040' from test_cases.csv is not mapped in REQID_TCID.csv;TC0040;;;;
+C2;TCID 'TC0041' from test_cases.csv is not mapped in REQID_TCID.csv;TC0041;;;;
+C2;TCID 'TC0042' from test_cases.csv is not mapped in REQID_TCID.csv;TC0042;;;;
+C2;TCID 'TC0043' from test_cases.csv is not mapped in REQID_TCID.csv;TC0043;;;;
+C2;TCID 'TC0044' from test_cases.csv is not mapped in REQID_TCID.csv;TC0044;;;;
+C2;TCID 'TC0045' from test_cases.csv is not mapped in REQID_TCID.csv;TC0045;;;;
+C2;TCID 'TC0046' from test_cases.csv is not mapped in REQID_TCID.csv;TC0046;;;;
+C2;TCID 'TC0047' from test_cases.csv is not mapped in REQID_TCID.csv;TC0047;;;;
+C2;TCID 'TC0048' from test_cases.csv is not mapped in REQID_TCID.csv;TC0048;;;;
+C2;TCID 'TC0049' from test_cases.csv is not mapped in REQID_TCID.csv;TC0049;;;;
+C2;TCID 'TC0050' from test_cases.csv is not mapped in REQID_TCID.csv;TC0050;;;;
+C2;TCID 'TC0051' from test_cases.csv is not mapped in REQID_TCID.csv;TC0051;;;;
+C2;TCID 'TC0052' from test_cases.csv is not mapped in REQID_TCID.csv;TC0052;;;;
+C2;TCID 'TC0053' from test_cases.csv is not mapped in REQID_TCID.csv;TC0053;;;;
+C2;TCID 'TC0054' from test_cases.csv is not mapped in REQID_TCID.csv;TC0054;;;;
+C2;TCID 'TC0055' from test_cases.csv is not mapped in REQID_TCID.csv;TC0055;;;;
+C2;TCID 'TC0056' from test_cases.csv is not mapped in REQID_TCID.csv;TC0056;;;;
+C2;TCID 'TC0057' from test_cases.csv is not mapped in REQID_TCID.csv;TC0057;;;;
+C2;TCID 'TC0058' from test_cases.csv is not mapped in REQID_TCID.csv;TC0058;;;;
+C2;TCID 'TC0059' from test_cases.csv is not mapped in REQID_TCID.csv;TC0059;;;;
+C2;TCID 'TC0060' from test_cases.csv is not mapped in REQID_TCID.csv;TC0060;;;;
+C2;TCID 'TC0061' from test_cases.csv is not mapped in REQID_TCID.csv;TC0061;;;;
+C2;TCID 'TC0062' from test_cases.csv is not mapped in REQID_TCID.csv;TC0062;;;;
+C2;TCID 'TC0063' from test_cases.csv is not mapped in REQID_TCID.csv;TC0063;;;;
+C2;TCID 'TC0064' from test_cases.csv is not mapped in REQID_TCID.csv;TC0064;;;;
+C2;TCID 'TC0065' from test_cases.csv is not mapped in REQID_TCID.csv;TC0065;;;;
+C2;TCID 'TC0066' from test_cases.csv is not mapped in REQID_TCID.csv;TC0066;;;;
+C2;TCID 'TC0067' from test_cases.csv is not mapped in REQID_TCID.csv;TC0067;;;;
+C2;TCID 'TC0068' from test_cases.csv is not mapped in REQID_TCID.csv;TC0068;;;;
+C2;TCID 'TC0069' from test_cases.csv is not mapped in REQID_TCID.csv;TC0069;;;;
+C2;TCID 'TC0070' from test_cases.csv is not mapped in REQID_TCID.csv;TC0070;;;;
+C2;TCID 'TC0071' from test_cases.csv is not mapped in REQID_TCID.csv;TC0071;;;;
+C2;TCID 'TC0072' from test_cases.csv is not mapped in REQID_TCID.csv;TC0072;;;;
+C2;TCID 'TC0073' from test_cases.csv is not mapped in REQID_TCID.csv;TC0073;;;;
+C2;TCID 'TC0074' from test_cases.csv is not mapped in REQID_TCID.csv;TC0074;;;;
+C2;TCID 'TC0075' from test_cases.csv is not mapped in REQID_TCID.csv;TC0075;;;;
+C2;TCID 'TC0076' from test_cases.csv is not mapped in REQID_TCID.csv;TC0076;;;;
+C2;TCID 'TC0077' from test_cases.csv is not mapped in REQID_TCID.csv;TC0077;;;;
+C2;TCID 'TC0078' from test_cases.csv is not mapped in REQID_TCID.csv;TC0078;;;;
+C2;TCID 'TC0079' from test_cases.csv is not mapped in REQID_TCID.csv;TC0079;;;;
+C2;TCID 'TC0080' from test_cases.csv is not mapped in REQID_TCID.csv;TC0080;;;;
+C2;TCID 'TC0081' from test_cases.csv is not mapped in REQID_TCID.csv;TC0081;;;;
+C2;TCID 'TC0082' from test_cases.csv is not mapped in REQID_TCID.csv;TC0082;;;;
+C2;TCID 'TC0083' from test_cases.csv is not mapped in REQID_TCID.csv;TC0083;;;;
+C2;TCID 'TC0084' from test_cases.csv is not mapped in REQID_TCID.csv;TC0084;;;;
+C2;TCID 'TC0085' from test_cases.csv is not mapped in REQID_TCID.csv;TC0085;;;;
+C2;TCID 'TC0086' from test_cases.csv is not mapped in REQID_TCID.csv;TC0086;;;;
+C2;TCID 'TC0087' from test_cases.csv is not mapped in REQID_TCID.csv;TC0087;;;;
+C2;TCID 'TC0088' from test_cases.csv is not mapped in REQID_TCID.csv;TC0088;;;;
+C2;TCID 'TC0089' from test_cases.csv is not mapped in REQID_TCID.csv;TC0089;;;;
+C2;TCID 'TC0090' from test_cases.csv is not mapped in REQID_TCID.csv;TC0090;;;;
+C2;TCID 'TC0091' from test_cases.csv is not mapped in REQID_TCID.csv;TC0091;;;;
+C2;TCID 'TC0092' from test_cases.csv is not mapped in REQID_TCID.csv;TC0092;;;;
+C2;TCID 'TC0093' from test_cases.csv is not mapped in REQID_TCID.csv;TC0093;;;;
+C2;TCID 'TC0094' from test_cases.csv is not mapped in REQID_TCID.csv;TC0094;;;;
+C2;TCID 'TC0095' from test_cases.csv is not mapped in REQID_TCID.csv;TC0095;;;;
+C2;TCID 'TC0096' from test_cases.csv is not mapped in REQID_TCID.csv;TC0096;;;;
+C2;TCID 'TC0097' from test_cases.csv is not mapped in REQID_TCID.csv;TC0097;;;;
+C2;TCID 'TC0098' from test_cases.csv is not mapped in REQID_TCID.csv;TC0098;;;;
+C2;TCID 'TC0099' from test_cases.csv is not mapped in REQID_TCID.csv;TC0099;;;;
+C2;TCID 'TC0100' from test_cases.csv is not mapped in REQID_TCID.csv;TC0100;;;;
+C2;TCID 'TC0101' from test_cases.csv is not mapped in REQID_TCID.csv;TC0101;;;;
+C2;TCID 'TC0102' from test_cases.csv is not mapped in REQID_TCID.csv;TC0102;;;;
+C2;TCID 'TC0103' from test_cases.csv is not mapped in REQID_TCID.csv;TC0103;;;;
+C2;TCID 'TC0104' from test_cases.csv is not mapped in REQID_TCID.csv;TC0104;;;;
+C2;TCID 'TC0105' from test_cases.csv is not mapped in REQID_TCID.csv;TC0105;;;;
+C2;TCID 'TC0106' from test_cases.csv is not mapped in REQID_TCID.csv;TC0106;;;;
+C2;TCID 'TC0107' from test_cases.csv is not mapped in REQID_TCID.csv;TC0107;;;;
+C2;TCID 'TC0108' from test_cases.csv is not mapped in REQID_TCID.csv;TC0108;;;;
+C2;TCID 'TC0109' from test_cases.csv is not mapped in REQID_TCID.csv;TC0109;;;;
+C2;TCID 'TC0110' from test_cases.csv is not mapped in REQID_TCID.csv;TC0110;;;;
+C2;TCID 'TC0111' from test_cases.csv is not mapped in REQID_TCID.csv;TC0111;;;;
+C2;TCID 'TC0112' from test_cases.csv is not mapped in REQID_TCID.csv;TC0112;;;;
+C2;TCID 'TC0113' from test_cases.csv is not mapped in REQID_TCID.csv;TC0113;;;;
+C2;TCID 'TC0114' from test_cases.csv is not mapped in REQID_TCID.csv;TC0114;;;;
+C2;TCID 'TC0115' from test_cases.csv is not mapped in REQID_TCID.csv;TC0115;;;;
+C2;TCID 'TC0116' from test_cases.csv is not mapped in REQID_TCID.csv;TC0116;;;;
+C2;TCID 'TC0117' from test_cases.csv is not mapped in REQID_TCID.csv;TC0117;;;;
+C2;TCID 'TC0118' from test_cases.csv is not mapped in REQID_TCID.csv;TC0118;;;;
+C2;TCID 'TC0119' from test_cases.csv is not mapped in REQID_TCID.csv;TC0119;;;;
+C2;TCID 'TC0120' from test_cases.csv is not mapped in REQID_TCID.csv;TC0120;;;;
+C2;TCID 'TC0121' from test_cases.csv is not mapped in REQID_TCID.csv;TC0121;;;;
+C2;TCID 'TC0122' from test_cases.csv is not mapped in REQID_TCID.csv;TC0122;;;;
+C2;TCID 'TC0123' from test_cases.csv is not mapped in REQID_TCID.csv;TC0123;;;;
+C2;TCID 'TC0124' from test_cases.csv is not mapped in REQID_TCID.csv;TC0124;;;;
+C2;TCID 'TC0125' from test_cases.csv is not mapped in REQID_TCID.csv;TC0125;;;;
+C2;TCID 'TC0126' from test_cases.csv is not mapped in REQID_TCID.csv;TC0126;;;;
+C2;TCID 'TC0127' from test_cases.csv is not mapped in REQID_TCID.csv;TC0127;;;;
+C2;TCID 'TC0128' from test_cases.csv is not mapped in REQID_TCID.csv;TC0128;;;;
+C2;TCID 'TC0129' from test_cases.csv is not mapped in REQID_TCID.csv;TC0129;;;;
+C2;TCID 'TC0130' from test_cases.csv is not mapped in REQID_TCID.csv;TC0130;;;;
+C2;TCID 'TC0131' from test_cases.csv is not mapped in REQID_TCID.csv;TC0131;;;;
+C2;TCID 'TC0132' from test_cases.csv is not mapped in REQID_TCID.csv;TC0132;;;;
+C2;TCID 'TC0133' from test_cases.csv is not mapped in REQID_TCID.csv;TC0133;;;;
+C2;TCID 'TC0134' from test_cases.csv is not mapped in REQID_TCID.csv;TC0134;;;;
+C2;TCID 'TC0135' from test_cases.csv is not mapped in REQID_TCID.csv;TC0135;;;;
+C2;TCID 'TC0136' from test_cases.csv is not mapped in REQID_TCID.csv;TC0136;;;;
+C2;TCID 'TC0137' from test_cases.csv is not mapped in REQID_TCID.csv;TC0137;;;;
+C2;TCID 'TC0138' from test_cases.csv is not mapped in REQID_TCID.csv;TC0138;;;;
+C2;TCID 'TC0139' from test_cases.csv is not mapped in REQID_TCID.csv;TC0139;;;;
+C2;TCID 'TC0140' from test_cases.csv is not mapped in REQID_TCID.csv;TC0140;;;;
+C2;TCID 'TC0141' from test_cases.csv is not mapped in REQID_TCID.csv;TC0141;;;;
+C2;TCID 'TC0142' from test_cases.csv is not mapped in REQID_TCID.csv;TC0142;;;;
+C2;TCID 'TC0143' from test_cases.csv is not mapped in REQID_TCID.csv;TC0143;;;;
+C2;TCID 'TC0144' from test_cases.csv is not mapped in REQID_TCID.csv;TC0144;;;;
+C2;TCID 'TC0145' from test_cases.csv is not mapped in REQID_TCID.csv;TC0145;;;;
+C2;TCID 'TC0146' from test_cases.csv is not mapped in REQID_TCID.csv;TC0146;;;;
+C2;TCID 'TC0147' from test_cases.csv is not mapped in REQID_TCID.csv;TC0147;;;;
+C2;TCID 'TC0148' from test_cases.csv is not mapped in REQID_TCID.csv;TC0148;;;;
+C2;TCID 'TC0149' from test_cases.csv is not mapped in REQID_TCID.csv;TC0149;;;;
+C2;TCID 'TC0150' from test_cases.csv is not mapped in REQID_TCID.csv;TC0150;;;;
+C2;TCID 'TC0151' from test_cases.csv is not mapped in REQID_TCID.csv;TC0151;;;;
+C2;TCID 'TC0152' from test_cases.csv is not mapped in REQID_TCID.csv;TC0152;;;;
+C2;TCID 'TC0153' from test_cases.csv is not mapped in REQID_TCID.csv;TC0153;;;;
+C2;TCID 'TC0154' from test_cases.csv is not mapped in REQID_TCID.csv;TC0154;;;;
+C2;TCID 'TC0155' from test_cases.csv is not mapped in REQID_TCID.csv;TC0155;;;;
+C2;TCID 'TC0156' from test_cases.csv is not mapped in REQID_TCID.csv;TC0156;;;;
+C2;TCID 'TC0157' from test_cases.csv is not mapped in REQID_TCID.csv;TC0157;;;;
+C2;TCID 'TC0158' from test_cases.csv is not mapped in REQID_TCID.csv;TC0158;;;;
+C2;TCID 'TC0159' from test_cases.csv is not mapped in REQID_TCID.csv;TC0159;;;;
+C2;TCID 'TC0160' from test_cases.csv is not mapped in REQID_TCID.csv;TC0160;;;;
+C2;TCID 'TC0161' from test_cases.csv is not mapped in REQID_TCID.csv;TC0161;;;;
+C2;TCID 'TC0162' from test_cases.csv is not mapped in REQID_TCID.csv;TC0162;;;;
+C2;TCID 'TC0163' from test_cases.csv is not mapped in REQID_TCID.csv;TC0163;;;;
+C2;TCID 'TC0164' from test_cases.csv is not mapped in REQID_TCID.csv;TC0164;;;;
+C2;TCID 'TC0165' from test_cases.csv is not mapped in REQID_TCID.csv;TC0165;;;;
+C2;TCID 'TC0166' from test_cases.csv is not mapped in REQID_TCID.csv;TC0166;;;;
+C2;TCID 'TC0167' from test_cases.csv is not mapped in REQID_TCID.csv;TC0167;;;;
+C2;TCID 'TC0168' from test_cases.csv is not mapped in REQID_TCID.csv;TC0168;;;;
+C2;TCID 'TC0169' from test_cases.csv is not mapped in REQID_TCID.csv;TC0169;;;;
+C2;TCID 'TC0170' from test_cases.csv is not mapped in REQID_TCID.csv;TC0170;;;;
+C2;TCID 'TC0171' from test_cases.csv is not mapped in REQID_TCID.csv;TC0171;;;;
+C2;TCID 'TC0172' from test_cases.csv is not mapped in REQID_TCID.csv;TC0172;;;;
+C2;TCID 'TC0173' from test_cases.csv is not mapped in REQID_TCID.csv;TC0173;;;;
+C2;TCID 'TC0174' from test_cases.csv is not mapped in REQID_TCID.csv;TC0174;;;;
+C2;TCID 'TC0175' from test_cases.csv is not mapped in REQID_TCID.csv;TC0175;;;;
+C2;TCID 'TC0176' from test_cases.csv is not mapped in REQID_TCID.csv;TC0176;;;;
+C2;TCID 'TC0177' from test_cases.csv is not mapped in REQID_TCID.csv;TC0177;;;;
+C2;TCID 'TC0178' from test_cases.csv is not mapped in REQID_TCID.csv;TC0178;;;;
+C2;TCID 'TC0179' from test_cases.csv is not mapped in REQID_TCID.csv;TC0179;;;;
+C2;TCID 'TC0180' from test_cases.csv is not mapped in REQID_TCID.csv;TC0180;;;;
+C2;TCID 'TC0181' from test_cases.csv is not mapped in REQID_TCID.csv;TC0181;;;;
+C2;TCID 'TC0182' from test_cases.csv is not mapped in REQID_TCID.csv;TC0182;;;;
+C2;TCID 'TC0183' from test_cases.csv is not mapped in REQID_TCID.csv;TC0183;;;;
+C2;TCID 'TC0184' from test_cases.csv is not mapped in REQID_TCID.csv;TC0184;;;;
+C2;TCID 'TC0185' from test_cases.csv is not mapped in REQID_TCID.csv;TC0185;;;;
+C2;TCID 'TC0186' from test_cases.csv is not mapped in REQID_TCID.csv;TC0186;;;;
+C2;TCID 'TC0187' from test_cases.csv is not mapped in REQID_TCID.csv;TC0187;;;;
+C2;TCID 'TC0188' from test_cases.csv is not mapped in REQID_TCID.csv;TC0188;;;;
+C2;TCID 'TC0189' from test_cases.csv is not mapped in REQID_TCID.csv;TC0189;;;;
+C2;TCID 'TC0190' from test_cases.csv is not mapped in REQID_TCID.csv;TC0190;;;;
+C2;TCID 'TC0191' from test_cases.csv is not mapped in REQID_TCID.csv;TC0191;;;;
+C2;TCID 'TC0192' from test_cases.csv is not mapped in REQID_TCID.csv;TC0192;;;;
+C2;TCID 'TC0193' from test_cases.csv is not mapped in REQID_TCID.csv;TC0193;;;;
+C2;TCID 'TC0194' from test_cases.csv is not mapped in REQID_TCID.csv;TC0194;;;;
+C2;TCID 'TC0195' from test_cases.csv is not mapped in REQID_TCID.csv;TC0195;;;;
+C2;TCID 'TC0196' from test_cases.csv is not mapped in REQID_TCID.csv;TC0196;;;;
+C2;TCID 'TC0197' from test_cases.csv is not mapped in REQID_TCID.csv;TC0197;;;;
+C2;TCID 'TC0198' from test_cases.csv is not mapped in REQID_TCID.csv;TC0198;;;;
+C2;TCID 'TC0199' from test_cases.csv is not mapped in REQID_TCID.csv;TC0199;;;;
+C2;TCID 'TC0200' from test_cases.csv is not mapped in REQID_TCID.csv;TC0200;;;;
+C2;TCID 'TC0201' from test_cases.csv is not mapped in REQID_TCID.csv;TC0201;;;;
+C2;TCID 'TC0202' from test_cases.csv is not mapped in REQID_TCID.csv;TC0202;;;;
+C2;TCID 'TC0203' from test_cases.csv is not mapped in REQID_TCID.csv;TC0203;;;;
+C2;TCID 'TC0204' from test_cases.csv is not mapped in REQID_TCID.csv;TC0204;;;;
+C2;TCID 'TC0205' from test_cases.csv is not mapped in REQID_TCID.csv;TC0205;;;;
+C2;TCID 'TC0206' from test_cases.csv is not mapped in REQID_TCID.csv;TC0206;;;;
+C2;TCID 'TC0207' from test_cases.csv is not mapped in REQID_TCID.csv;TC0207;;;;
+C2;TCID 'TC0208' from test_cases.csv is not mapped in REQID_TCID.csv;TC0208;;;;
+C2;TCID 'TC0209' from test_cases.csv is not mapped in REQID_TCID.csv;TC0209;;;;
+C2;TCID 'TC0210' from test_cases.csv is not mapped in REQID_TCID.csv;TC0210;;;;
+C2;TCID 'TC0211' from test_cases.csv is not mapped in REQID_TCID.csv;TC0211;;;;
+C2;TCID 'TC0212' from test_cases.csv is not mapped in REQID_TCID.csv;TC0212;;;;
+C2;TCID 'TC0213' from test_cases.csv is not mapped in REQID_TCID.csv;TC0213;;;;
+C2;TCID 'TC0214' from test_cases.csv is not mapped in REQID_TCID.csv;TC0214;;;;
+C2;TCID 'TC0215' from test_cases.csv is not mapped in REQID_TCID.csv;TC0215;;;;
+C2;TCID 'TC0216' from test_cases.csv is not mapped in REQID_TCID.csv;TC0216;;;;
+C5;UserStory REQID '01.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;01.02.01;1.0;;
+C5;UserStory REQID '01.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;01.03.01;1.0;;
+C5;UserStory REQID '01.03.02' is mapped to only 1 unique TCID(s) (needs >= 2);;01.03.02;1.0;;
+C5;UserStory REQID '01.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;01.04.01;1.0;;
+C5;UserStory REQID '01.05.01' is mapped to only 1 unique TCID(s) (needs >= 2);;01.05.01;1.0;;
+C5;UserStory REQID '01.06.01' is mapped to only 1 unique TCID(s) (needs >= 2);;01.06.01;1.0;;
+C5;UserStory REQID '02.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;02.01.01;1.0;;
+C5;UserStory REQID '02.01.02' is mapped to only 1 unique TCID(s) (needs >= 2);;02.01.02;1.0;;
+C5;UserStory REQID '02.01.03' is mapped to only 1 unique TCID(s) (needs >= 2);;02.01.03;1.0;;
+C5;UserStory REQID '02.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;02.02.01;1.0;;
+C5;UserStory REQID '02.02.02' is mapped to only 1 unique TCID(s) (needs >= 2);;02.02.02;1.0;;
+C5;UserStory REQID '02.02.03' is mapped to only 1 unique TCID(s) (needs >= 2);;02.02.03;1.0;;
+C5;UserStory REQID '02.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;02.03.01;1.0;;
+C5;UserStory REQID '02.03.02' is mapped to only 1 unique TCID(s) (needs >= 2);;02.03.02;1.0;;
+C5;UserStory REQID '02.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;02.04.01;1.0;;
+C5;UserStory REQID '02.05.01' is mapped to only 1 unique TCID(s) (needs >= 2);;02.05.01;1.0;;
+C5;UserStory REQID '03.00.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.00.01;1.0;;
+C5;UserStory REQID '03.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.01.01;1.0;;
+C5;UserStory REQID '03.01.02' is mapped to only 1 unique TCID(s) (needs >= 2);;03.01.02;1.0;;
+C5;UserStory REQID '03.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.02.01;1.0;;
+C5;UserStory REQID '03.02.02' is mapped to only 1 unique TCID(s) (needs >= 2);;03.02.02;1.0;;
+C5;UserStory REQID '03.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.03.01;1.0;;
+C5;UserStory REQID '03.03.02' is mapped to only 1 unique TCID(s) (needs >= 2);;03.03.02;1.0;;
+C5;UserStory REQID '03.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.04.01;1.0;;
+C5;UserStory REQID '03.04.02' is mapped to only 1 unique TCID(s) (needs >= 2);;03.04.02;1.0;;
+C5;UserStory REQID '03.05.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.05.01;1.0;;
+C5;UserStory REQID '03.06.01' is mapped to only 1 unique TCID(s) (needs >= 2);;03.06.01;1.0;;
+C5;UserStory REQID '04.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;04.01.01;1.0;;
+C5;UserStory REQID '04.01.02' is mapped to only 1 unique TCID(s) (needs >= 2);;04.01.02;1.0;;
+C5;UserStory REQID '04.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;04.02.01;1.0;;
+C5;UserStory REQID '04.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;04.03.01;1.0;;
+C5;UserStory REQID '04.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;04.04.01;1.0;;
+C5;UserStory REQID '05.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;05.01.01;1.0;;
+C5;UserStory REQID '05.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;05.02.01;1.0;;
+C5;UserStory REQID '05.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;05.03.01;1.0;;
+C5;UserStory REQID '05.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;05.04.01;1.0;;
+C5;UserStory REQID '06.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.01.01;1.0;;
+C5;UserStory REQID '06.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.02.01;1.0;;
+C5;UserStory REQID '06.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.03.01;1.0;;
+C5;UserStory REQID '06.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.04.01;1.0;;
+C5;UserStory REQID '06.05.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.05.01;1.0;;
+C5;UserStory REQID '06.06.01' is mapped to only 1 unique TCID(s) (needs >= 2);;06.06.01;1.0;;
+C5;UserStory REQID '07.01.01' is mapped to only 1 unique TCID(s) (needs >= 2);;07.01.01;1.0;;
+C5;UserStory REQID '07.02.01' is mapped to only 1 unique TCID(s) (needs >= 2);;07.02.01;1.0;;
+C5;UserStory REQID '07.03.01' is mapped to only 1 unique TCID(s) (needs >= 2);;07.03.01;1.0;;
+C5;UserStory REQID '07.04.01' is mapped to only 1 unique TCID(s) (needs >= 2);;07.04.01;1.0;;
+C5;UserStory REQID '07.05.01' is mapped to only 1 unique TCID(s) (needs >= 2);;07.05.01;1.0;;
+C6;Feature REQID '01.02' has 1 User Story/Stories (needs >= 2);;;;01.02;1.0
+C6;Feature REQID '01.04' has 1 User Story/Stories (needs >= 2);;;;01.04;1.0
+C6;Feature REQID '01.05' has 1 User Story/Stories (needs >= 2);;;;01.05;1.0
+C6;Feature REQID '01.06' has 1 User Story/Stories (needs >= 2);;;;01.06;1.0
+C6;Feature REQID '02.04' has 1 User Story/Stories (needs >= 2);;;;02.04;1.0
+C6;Feature REQID '02.05' has 1 User Story/Stories (needs >= 2);;;;02.05;1.0
+C6;Feature REQID '03.00' has 1 User Story/Stories (needs >= 2);;;;03.00;1.0
+C6;Feature REQID '03.05' has 1 User Story/Stories (needs >= 2);;;;03.05;1.0
+C6;Feature REQID '03.06' has 1 User Story/Stories (needs >= 2);;;;03.06;1.0
+C6;Feature REQID '04.02' has 1 User Story/Stories (needs >= 2);;;;04.02;1.0
+C6;Feature REQID '04.03' has 1 User Story/Stories (needs >= 2);;;;04.03;1.0
+C6;Feature REQID '04.04' has 1 User Story/Stories (needs >= 2);;;;04.04;1.0
+C6;Feature REQID '05.01' has 1 User Story/Stories (needs >= 2);;;;05.01;1.0
+C6;Feature REQID '05.02' has 1 User Story/Stories (needs >= 2);;;;05.02;1.0
+C6;Feature REQID '05.03' has 1 User Story/Stories (needs >= 2);;;;05.03;1.0
+C6;Feature REQID '05.04' has 1 User Story/Stories (needs >= 2);;;;05.04;1.0
+C6;Feature REQID '06.01' has 1 User Story/Stories (needs >= 2);;;;06.01;1.0
+C6;Feature REQID '06.02' has 1 User Story/Stories (needs >= 2);;;;06.02;1.0
+C6;Feature REQID '06.03' has 1 User Story/Stories (needs >= 2);;;;06.03;1.0
+C6;Feature REQID '06.04' has 1 User Story/Stories (needs >= 2);;;;06.04;1.0
+C6;Feature REQID '06.05' has 1 User Story/Stories (needs >= 2);;;;06.05;1.0
+C6;Feature REQID '06.06' has 1 User Story/Stories (needs >= 2);;;;06.06;1.0
+C6;Feature REQID '07.01' has 1 User Story/Stories (needs >= 2);;;;07.01;1.0
+C6;Feature REQID '07.02' has 1 User Story/Stories (needs >= 2);;;;07.02;1.0
+C6;Feature REQID '07.03' has 1 User Story/Stories (needs >= 2);;;;07.03;1.0
+C6;Feature REQID '07.04' has 1 User Story/Stories (needs >= 2);;;;07.04;1.0
+C6;Feature REQID '07.05' has 1 User Story/Stories (needs >= 2);;;;07.05;1.0

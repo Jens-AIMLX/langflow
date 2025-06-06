@@ -1,4 +1,5 @@
 @echo off
+setlocal EnableDelayedExpansion
 echo Starting Langflow...
 
 REM Check if virtual environment exists
@@ -309,9 +310,69 @@ if not exist "custom_nodes" (
     mkdir "custom_nodes" > nul 2>&1
 )
 
-REM Start Langflow
-echo Starting Langflow...
-python -m langflow run
+REM Setup Enhanced Filename Environment
+echo Setting up enhanced filename environment...
+
+REM Load environment variables from .env file if it exists
+if exist ".env" (
+    echo Loading enhanced filename configuration from .env
+    for /f "usebackq tokens=1,* delims==" %%a in (".env") do (
+        set "_key=%%a"
+        set "_value=%%b"
+        REM Remove potential trailing spaces from value - this is a common issue
+        for /l %%x in (1,1,31) do if "!_value:~-1!"==" " set "_value=!_value:~0,-1!"
+        if not "!_key:~0,1!"=="#" set "!_key!=!_value!"
+    )
+    echo ✅ Enhanced filename features enabled
+) else (
+    echo Setting default enhanced filename environment...
+    set "LANGFLOW_FEATURE_enhanced_file_inputs=true"
+    set "LANGFLOW_FEATURE_enhanced_metadata_extraction=true"
+    set "LANGFLOW_ENHANCED_FILENAME_ENABLED=true"
+    set "LANGFLOW_CUSTOM_NODES_PATH=custom_nodes"
+    echo ✅ Enhanced filename features enabled (default configuration)
+)
+
+REM Verify enhanced components are available
+if exist "custom_nodes\file_metadata_extractor.py" (
+    echo ✅ File Metadata Extractor component ready
+)
+if exist "custom_nodes\backward_compatible_file_metadata_extractor.py" (
+    echo ✅ Backward Compatible File Metadata Extractor ready
+)
 
 echo.
-echo To access Langflow, open your browser and go to: http://127.0.0.1:7860/flows 
+echo 🚀 Starting Enhanced Langflow...
+echo ================================
+echo ✅ Original filename preservation: ENABLED
+echo ✅ Enhanced metadata extraction: ENABLED
+echo ✅ File metadata extractors: READY
+echo ✅ Backward compatibility: MAINTAINED
+echo.
+
+REM Clear any problematic environment variables that cause log level issues
+echo Clearing problematic environment variables...
+set UVICORN_LOG_LEVEL=
+set LOG_LEVEL=
+
+REM Start Langflow with enhanced components
+echo Starting Langflow with enhanced filename components...
+echo.
+echo If you see the components in the UI:
+echo   - "File Metadata Extractor"
+echo   - "Backward Compatible File Metadata Extractor"
+echo Then the enhanced filename implementation is working!
+echo.
+
+REM Try to start with custom components first
+python -m langflow run --host 127.0.0.1 --port 7860 --components-path custom_nodes
+
+REM If that fails, try basic startup
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo ⚠️ Startup with custom components failed. Trying basic startup...
+    python -m langflow run --host 127.0.0.1 --port 7860
+)
+
+echo.
+echo To access Langflow, open your browser and go to: http://127.0.0.1:7860
