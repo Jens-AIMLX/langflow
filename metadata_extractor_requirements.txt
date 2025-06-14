@@ -1,0 +1,20 @@
+# Optional dependencies for File Metadata Extractor component
+# Install these for full functionality:
+
+# For PDF metadata extraction
+PyPDF2>=3.0.0
+
+# For Word document metadata extraction  
+python-docx>=0.8.11
+
+# For RTF document metadata extraction
+pyth>=0.7.0
+
+# For image metadata extraction (including EXIF data)
+Pillow>=9.0.0
+
+# Note: zipfile and tarfile are part of Python standard library
+# sqlite3 is also part of Python standard library
+
+# Installation command:
+# pip install -r metadata_extractor_requirements.txt

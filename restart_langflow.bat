@@ -1,0 +1,6 @@
+@echo off
+echo Stopping any existing Langflow processes...
+taskkill /F /IM python.exe 2>nul
+echo.
+echo Starting Langflow...
+langflow_venv\Scripts\python.exe run_backend.py 

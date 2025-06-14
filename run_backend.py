@@ -20,4 +20,12 @@ print("Python path:", sys.path)
 from src.backend.base.langflow.__main__ import run_langflow
 
 print('Starting LangFlow backend on port 7860...')
-run_langflow('0.0.0.0', 7860, 'debug', {}, None)
+# Fix: Provide all required options
+options = {
+    "host": "0.0.0.0",
+    "port": 7860,
+    "log_level": "debug",
+    "keyfile": None,
+    "certfile": None
+}
+run_langflow(options["host"], options["port"], options["log_level"], options, None)

@@ -1,0 +1,10 @@
+@/Requirements\BestPractice read the documents and understand the workflow.
+tell me when you understood and summarize how you understood
+
+when you understood it , adapt the contents of the csvs in according to the process. 
+they are currently filled with data from another project to serve as example.
+understand the structure, then clean the rows without deleting the headers and repopulate them with data from the current project.
+your most important project data :
+general concept is Requirements\General_Implementation_Plan.md
+test folder at  tests
+derive the user stories and test cases and user story-test case-associations from there according to the agreed workflow
